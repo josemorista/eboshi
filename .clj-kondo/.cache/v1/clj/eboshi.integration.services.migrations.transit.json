@@ -1,0 +1,1 @@
+["^ ","~$*config*",["^ ","~:row",9,"~:col",1,"~:name","^0","~:ns","~$eboshi.integration.services.migrations","~:top-ns","^5"],"~$create-migration-test",["^ ","^1",18,"^2",1,"~:fixed-arities",["~#set",[0]],"^3","^7","^4","^5","^6","^5"],"~:filename","/home/josemorista/Documents/Dev/foss/eboshi/test/eboshi/integration/services/migrations.clj"]
