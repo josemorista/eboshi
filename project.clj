@@ -6,5 +6,6 @@
   :dependencies [[org.clojure/clojure "1.11.1"]
                  [prismatic/schema "1.4.1"]
                  [com.github.seancorfield/next.jdbc "1.3.1070"]
-                 [com.mysql/mysql-connector-j "9.4.0"]]
+                 [com.mysql/mysql-connector-j "9.4.0"]
+                 [org.clojure/test.check "1.1.1"]]
   :repl-options {:init-ns eboshi.core})

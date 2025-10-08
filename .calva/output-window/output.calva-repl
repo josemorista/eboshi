@@ -36,8 +36,8 @@ You can configure this with the setting:
 ;   - See https://calva.io/connect-sequences/
 ; 
 
-; Starting Jack-in: (cd /home/josemorista/Documents/Dev/foss/eboshi; lein update-in :dependencies conj '[nrepl,"1.3.1"]' -- update-in :plugins conj '[cider/cider-nrepl,"0.55.4"]' -- update-in '[:repl-options,:nrepl-middleware]' conj '["cider.nrepl/cider-middleware"]' -- repl :headless)
-; Using host:port 127.0.0.1:34329 ...
+; Starting Jack-in: (cd /Users/jose.morista/Documents/Dev/foss/eboshi; lein update-in :dependencies conj '[nrepl,"1.3.1"]' -- update-in :plugins conj '[cider/cider-nrepl,"0.55.4"]' -- update-in '[:repl-options,:nrepl-middleware]' conj '["cider.nrepl/cider-middleware"]' -- repl :headless)
+; Using host:port 127.0.0.1:49675 ...
 ; Hooking up nREPL sessions ...
 ; Connected session: clj
 ; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
@@ -49,317 +49,251 @@ clj꞉eboshi.core꞉> 
 ; Jack-in done.
 clj꞉eboshi.core꞉> 
 nil
-clj꞉eboshi.infra.mysql-migration-runner꞉> 
-#'eboshi.infra.mysql-migration-runner/db-spec
-clj꞉eboshi.infra.mysql-migration-runner꞉> 
-#'eboshi.infra.mysql-migration-runner/ds
-clj꞉eboshi.infra.mysql-migration-runner꞉> 
-; Execution error (SQLSyntaxErrorException) at com.mysql.cj.jdbc.exceptions.SQLError/createSQLException (SQLError.java:112).
-; Unknown database 'users'
-clj꞉eboshi.infra.mysql-migration-runner꞉> 
-; Execution error (ExceptionInfo) at next.jdbc/ensure-sql-params (jdbc.clj:185).
-; sql-params should be a vector containing a SQL string and any parameters
-clj꞉eboshi.infra.mysql-migration-runner꞉> 
-; Execution error (SQLSyntaxErrorException) at com.mysql.cj.jdbc.exceptions.SQLError/createSQLException (SQLError.java:112).
-; Unknown database 'users'
-clj꞉eboshi.infra.mysql-migration-runner꞉> 
-#'eboshi.infra.mysql-migration-runner/db-spec
-clj꞉eboshi.infra.mysql-migration-runner꞉> 
-#'eboshi.infra.mysql-migration-runner/ds
-clj꞉eboshi.infra.mysql-migration-runner꞉> 
-; Execution error (SQLSyntaxErrorException) at com.mysql.cj.jdbc.exceptions.SQLError/createSQLException (SQLError.java:112).
-; Unknown database 'items'
-clj꞉eboshi.infra.mysql-migration-runner꞉> 
-; Execution error (SQLSyntaxErrorException) at com.mysql.cj.jdbc.exceptions.SQLError/createSQLException (SQLError.java:112).
-; You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'unsigned-int not null primary key
-;                     name varchar(300) not null' at line 2
-clj꞉eboshi.infra.mysql-migration-runner꞉> 
-; Execution error (SQLSyntaxErrorException) at com.mysql.cj.jdbc.exceptions.SQLError/createSQLException (SQLError.java:112).
-; You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'name varchar(300) not null
-;                     created-at timestamp not null def' at line 3
-clj꞉eboshi.infra.mysql-migration-runner꞉> 
-; Execution error (SQLSyntaxErrorException) at com.mysql.cj.jdbc.exceptions.SQLError/createSQLException (SQLError.java:112).
-; You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '-at timestamp not null default current_timestamp)' at line 4
-clj꞉eboshi.infra.mysql-migration-runner꞉> 
-[[#:next.jdbc{:update-count 0}]]
-clj꞉eboshi.infra.mysql-migration-runner꞉> 
-; Execution error (SQLSyntaxErrorException) at com.mysql.cj.jdbc.exceptions.SQLError/createSQLException (SQLError.java:112).
-; You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'create table if not exists items(
-;                     id int unsigned not null p' at line 5
-clj꞉eboshi.infra.mysql-migration-runner꞉> 
-; Execution error (SQLSyntaxErrorException) at com.mysql.cj.jdbc.exceptions.SQLError/createSQLException (SQLError.java:112).
-; You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'create table if not exists items.items(
-;                     id int unsigned not ' at line 5
-clj꞉eboshi.infra.mysql-migration-runner꞉> 
-; Execution error (SQLSyntaxErrorException) at com.mysql.cj.jdbc.exceptions.SQLError/createSQLException (SQLError.java:112).
-; You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'create table if not exists items.items(
-;                     id int unsigned not ' at line 6
-clj꞉eboshi.infra.mysql-migration-runner꞉> 
-; Execution error (SQLSyntaxErrorException) at com.mysql.cj.jdbc.exceptions.SQLError/createSQLException (SQLError.java:112).
-; You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'create table if not exists items.items(
-;                     name varchar(300) no' at line 6
-clj꞉eboshi.infra.mysql-migration-runner꞉> 
-[[#:next.jdbc{:update-count 0}]]
-clj꞉eboshi.infra.mysql-migration-runner꞉> 
-; Syntax error compiling at (src/eboshi/services/migrations.clj:0:0).
-; Unable to resolve symbol: .getTime in this context
-clj꞉eboshi.services.migrations꞉> 
-1759877421967
-clj꞉eboshi.services.migrations꞉> 
-; Syntax error compiling at (src/eboshi/services/migrations.clj:48:15).
-; Unable to resolve symbol: migration-filename in this context
-clj꞉eboshi.services.migrations꞉> 
-; Syntax error compiling at (src/eboshi/services/migrations.clj:0:0).
-; Unable to resolve symbol: migration-filename in this context
-clj꞉eboshi.services.migrations꞉> 
-; Syntax error compiling at (src/eboshi/services/migrations.clj:48:15).
-; Unable to resolve symbol: migration-filename in this context
-clj꞉eboshi.services.migrations꞉> 
-"{:name \"\", :up [], :down []}"
-clj꞉eboshi.services.migrations꞉> 
-"{:name \"banana\", :up [], :down []}"
-clj꞉eboshi.services.migrations꞉> 
-; Evaluating file: migrations.clj
-; 
-; ; clj  eboshi.integration.services.migrations 
-; Syntax error compiling at (test/eboshi/integration/services/migrations.clj:20:7).
-; No such var: services.migrations/create
-; Evaluation of file migrations.clj failed: class clojure.lang.Compiler$CompilerException
 clj꞉eboshi.integration.services.migrations꞉> 
-nil
+#'eboshi.integration.services.migrations/*config*
 clj꞉eboshi.integration.services.migrations꞉> 
-; Evaluating file: migrations.clj
-; 
-; Syntax error compiling at (test/eboshi/integration/services/migrations.clj:20:7).
-; No such var: services.migrations/create
-; Evaluation of file migrations.clj failed: class clojure.lang.Compiler$CompilerException
+#:clojure.test{:once-fixtures
+               (#function[schema.test/validate-schemas]
+                #function[eboshi.integration.services.migrations/eval14677/fn--14678])}
 clj꞉eboshi.integration.services.migrations꞉> 
-nil
-clj꞉eboshi.services.migrations꞉> 
-; Evaluating file: migrations.clj
-; 
-; Syntax error compiling at (src/eboshi/services/migrations.clj:21:1).
-; No such var: protocols.migration-runner/MigrationRunnerProtocol
-; Evaluation of file migrations.clj failed: class clojure.lang.Compiler$CompilerException
-clj꞉eboshi.services.migrations꞉> 
-; Evaluating file: migration_runner.clj
-; 
-; ; clj  eboshi.protocols.migration-runner 
-; Syntax error macroexpanding s/defprotocol at (src/eboshi/protocols/migration_runner.clj:6:1).
-; Don't know how to create ISeq from: clojure.lang.Keyword
-; Evaluation of file migration_runner.clj failed: class clojure.lang.Compiler$CompilerException
-clj꞉eboshi.protocols.migration-runner꞉> 
-; Evaluating file: migrations.clj
-#'eboshi.models.migrations/Migration
-clj꞉eboshi.models.migrations꞉> 
-; Evaluating file: migration_runner.clj
-; 
-; ; clj  eboshi.protocols.migration-runner 
-; Syntax error macroexpanding s/defprotocol at (src/eboshi/protocols/migration_runner.clj:6:1).
-; Don't know how to create ISeq from: clojure.lang.Keyword
-; Evaluation of file migration_runner.clj failed: class clojure.lang.Compiler$CompilerException
-clj꞉eboshi.protocols.migration-runner꞉> 
-nil
-clj꞉eboshi.protocols.migration-runner꞉> 
-; Syntax error macroexpanding s/defprotocol at (src/eboshi/protocols/migration_runner.clj:6:1).
-; Don't know how to create ISeq from: clojure.lang.Keyword
-clj꞉eboshi.protocols.migration-runner꞉> 
-nil
-clj꞉eboshi.protocols.migration-runner꞉> 
-; Syntax error macroexpanding s/defprotocol at (src/eboshi/protocols/migration_runner.clj:6:1).
-; Don't know how to create ISeq from: clojure.lang.Keyword
-clj꞉eboshi.protocols.migration-runner꞉> 
-; Syntax error macroexpanding s/defprotocol at (src/eboshi/protocols/migration_runner.clj:6:1).
-; Don't know how to create ISeq from: clojure.lang.Keyword
-clj꞉eboshi.protocols.migration-runner꞉> 
-{:on eboshi.protocols.migration_runner.MigrationRunner,
- :on-interface eboshi.protocols.migration_runner.MigrationRunner,
- :sigs
- {:find-last-migration-name {:tag nil, :name find-last-migration-name, :arglists ([self]), :doc nil},
-  :execute {:tag nil, :name execute, :arglists ([migration self]), :doc nil}},
- :var #'eboshi.protocols.migration-runner/MigrationRunner,
- :method-map {:execute :execute, :find-last-migration-name :find-last-migration-name},
- :method-builders
- {#'eboshi.protocols.migration-runner/find-last-migration-name
-  #function[schema.macros/-instrument-protocol-method/method-builder--9812],
-  #'eboshi.protocols.migration-runner/execute
-  #function[schema.macros/-instrument-protocol-method/method-builder--9812]}}
-clj꞉eboshi.protocols.migration-runner꞉> 
-; Syntax error macroexpanding s/defprotocol at (src/eboshi/protocols/migration_runner.clj:6:1).
-; Don't know how to create ISeq from: clojure.lang.Keyword
-clj꞉eboshi.protocols.migration-runner꞉> 
-; Syntax error macroexpanding s/defprotocol at (src/eboshi/protocols/migration_runner.clj:6:1).
-; Don't know how to create ISeq from: clojure.lang.Keyword
-clj꞉eboshi.protocols.migration-runner꞉> 
-; Syntax error macroexpanding s/defprotocol at (src/eboshi/protocols/migration_runner.clj:6:1).
-; Don't know how to create ISeq from: clojure.lang.Keyword
-clj꞉eboshi.protocols.migration-runner꞉> 
-; Syntax error macroexpanding s/defprotocol at (src/eboshi/protocols/migration_runner.clj:6:1).
-; Don't know how to create ISeq from: clojure.lang.Keyword
-clj꞉eboshi.protocols.migration-runner꞉> 
-; Syntax error macroexpanding s/defprotocol at (src/eboshi/protocols/migration_runner.clj:6:1).
-; Don't know how to create ISeq from: clojure.lang.Keyword
-clj꞉eboshi.protocols.migration-runner꞉> 
-; Syntax error macroexpanding s/defprotocol at (src/eboshi/protocols/migration_runner.clj:6:1).
-; Don't know how to create ISeq from: clojure.lang.Keyword
-clj꞉eboshi.protocols.migration-runner꞉> 
-{:on eboshi.protocols.migration_runner.MigrationRunner,
- :on-interface eboshi.protocols.migration_runner.MigrationRunner,
- :sigs
- {:find-last-migration-name {:tag nil, :name find-last-migration-name, :arglists ([self]), :doc nil},
-  :execute {:tag nil, :name execute, :arglists ([migration self]), :doc nil}},
- :var #'eboshi.protocols.migration-runner/MigrationRunner,
- :method-map {:execute :execute, :find-last-migration-name :find-last-migration-name},
- :method-builders
- {#'eboshi.protocols.migration-runner/find-last-migration-name
-  #function[schema.macros/-instrument-protocol-method/method-builder--9812],
-  #'eboshi.protocols.migration-runner/execute
-  #function[schema.macros/-instrument-protocol-method/method-builder--9812]},
- :doc "Migration runner protocol"}
-clj꞉eboshi.protocols.migration-runner꞉> 
-#'eboshi.protocols.migration-runner/MigrationRunnerProtocol
-clj꞉eboshi.protocols.migration-runner꞉> 
-; Evaluating file: migrations.clj
-; 
-; ; clj  eboshi.integration.services.migrations 
-; Syntax error compiling at (test/eboshi/integration/services/migrations.clj:20:7).
-; No such var: services.migrations/create
-; Evaluation of file migrations.clj failed: class clojure.lang.Compiler$CompilerException
-clj꞉eboshi.integration.services.migrations꞉> 
-; Evaluating file: migrations.clj
-#'eboshi.logic.migrations/make-migration
-clj꞉eboshi.logic.migrations꞉> 
-; Evaluating file: migrations.clj
-; 
-; ; clj  eboshi.integration.services.migrations 
-; Syntax error compiling at (test/eboshi/integration/services/migrations.clj:20:7).
-; No such var: services.migrations/create
-; Evaluation of file migrations.clj failed: class clojure.lang.Compiler$CompilerException
-clj꞉eboshi.integration.services.migrations꞉> 
-; Evaluating file: fs.clj
-#'eboshi.logic.fs/rm!
-clj꞉eboshi.logic.fs꞉> 
-nil
-clj꞉eboshi.integration.services.migrations꞉> 
-; Evaluating file: migrations.clj
-; 
-; Syntax error compiling at (test/eboshi/integration/services/migrations.clj:20:7).
-; No such var: services.migrations/create
-; Evaluation of file migrations.clj failed: class clojure.lang.Compiler$CompilerException
+#'eboshi.integration.services.migrations/create-migration-test
 clj꞉eboshi.integration.services.migrations꞉> 
 ; Evaluating file: migrations.clj
 #'eboshi.services.migrations/sync!
 clj꞉eboshi.services.migrations꞉> 
 ; Evaluating file: migrations.clj
-#'eboshi.integration.services.migrations/create-migration-test
-clj꞉eboshi.integration.services.migrations꞉> 
-#'eboshi.integration.services.migrations/create-migration-test
-clj꞉eboshi.integration.services.migrations꞉> 
-; 
-; Testing eboshi.integration.services.migrations
-; Execution error (ExceptionInfo) at eboshi.logic.migrations/eval15220$make-config (migrations.clj:6).
-; Output of make-config does not match schema: 
-; 
-; 	   {:dialect disallowed-key}  
-; 
-; 
-clj꞉eboshi.integration.services.migrations꞉> 
-; Evaluating file: migrations.clj
-#'eboshi.logic.migrations/make-migration
-clj꞉eboshi.logic.migrations꞉> 
-; Evaluating file: migrations.clj
-; 
-; Testing eboshi.integration.services.migrations
-; 
-; Ran 1 tests containing 1 assertions.
-; 0 failures, 0 errors.
-{:test 1, :pass 1, :fail 0, :error 0, :type :summary}
-clj꞉eboshi.integration.services.migrations꞉> 
-; 
-; Testing eboshi.integration.services.migrations
-; 
-; Ran 1 tests containing 1 assertions.
-; 0 failures, 0 errors.
-{:test 1, :pass 1, :fail 0, :error 0, :type :summary}
-clj꞉eboshi.integration.services.migrations꞉> 
-#'eboshi.integration.services.migrations/create-migration-test
-clj꞉eboshi.integration.services.migrations꞉> 
-; 
-; Testing eboshi.integration.services.migrations
-; java.lang.RuntimeException: Unable to resolve symbol: migration in this context
-clj꞉eboshi.integration.services.migrations꞉> 
-; 
-; Ran 1 tests containing 1 assertions.
-; 0 failures, 0 errors.
-{:test 1, :pass 1, :fail 0, :error 0, :type :summary}
-clj꞉eboshi.integration.services.migrations꞉> 
-#'eboshi.integration.services.migrations/create-migration-test
-clj꞉eboshi.integration.services.migrations꞉> 
-; 
-; Testing eboshi.integration.services.migrations
-; 
-; Ran 1 tests containing 1 assertions.
-; 0 failures, 0 errors.
-{:test 1, :pass 1, :fail 0, :error 0, :type :summary}
-clj꞉eboshi.integration.services.migrations꞉> 
-nil
-clj꞉eboshi.integration.services.migrations꞉> 
-#'eboshi.integration.services.migrations/create-migration-test
-clj꞉eboshi.integration.services.migrations꞉> 
-; Running tests for the following namespaces:
-;   eboshi.integration.services.migrations
-;   eboshi.integration.services.migrations-test
-
-; 2 tests finished, all passing 👍, ns: 1, vars: 1
-clj꞉eboshi.integration.services.migrations꞉> 
-nil
-clj꞉eboshi.services.migrations꞉> 
-#'eboshi.services.migrations/make-migration-from-file
-clj꞉eboshi.services.migrations꞉> 
-#'eboshi.services.migrations/get-remaining-migrations-names
-clj꞉eboshi.services.migrations꞉> 
-#'eboshi.services.migrations/run-next!
+#'eboshi.services.migrations/sync!
 clj꞉eboshi.services.migrations꞉> 
 #'eboshi.services.migrations/create
 clj꞉eboshi.services.migrations꞉> 
-#'eboshi.services.migrations/up!
-clj꞉eboshi.services.migrations꞉> 
-#'eboshi.services.migrations/down!
-clj꞉eboshi.services.migrations꞉> 
-#'eboshi.services.migrations/sync!
-clj꞉eboshi.services.migrations꞉> 
-#'eboshi.infra.mysql-migration-runner/db-spec
-clj꞉eboshi.infra.mysql-migration-runner꞉> 
 nil
+clj꞉eboshi.integration.services.migrations꞉> 
+; 
+; Testing eboshi.integration.services.migrations
+; 
+; Ran 1 tests containing 2 assertions.
+; 0 failures, 0 errors.
+{:test 1, :pass 2, :fail 0, :error 0, :type :summary}
+clj꞉eboshi.integration.services.migrations꞉> 
+nil
+clj꞉eboshi.integration.services.mysql-migrations-runner꞉> 
+#'eboshi.integration.services.mysql-migrations-runner/*config*
+clj꞉eboshi.integration.services.mysql-migrations-runner꞉> 
+#:clojure.test{:once-fixtures
+               (#function[schema.test/validate-schemas]
+                #function[eboshi.integration.services.mysql-migrations-runner/eval15917/fn--15918])}
+clj꞉eboshi.integration.services.mysql-migrations-runner꞉> 
+#'eboshi.services.migrations/create
+clj꞉eboshi.services.migrations꞉> 
+nil
+clj꞉eboshi.integration.services.mysql-migrations-runner꞉> 
+#:clojure.test{:once-fixtures
+               (#function[schema.test/validate-schemas]
+                #function[eboshi.integration.services.mysql-migrations-runner/eval15980/fn--15981])}
+clj꞉eboshi.integration.services.mysql-migrations-runner꞉> 
+nil
+clj꞉eboshi.integration.services.mysql-migrations-runner꞉> 
+#'eboshi.infra.mysql-migration-runner/db-spec
 clj꞉eboshi.infra.mysql-migration-runner꞉> 
 #'eboshi.infra.mysql-migration-runner/ds
 clj꞉eboshi.infra.mysql-migration-runner꞉> 
-#'eboshi.infra.mysql-migration-runner/assert-migrations-table
+; Oct 08, 2025 7:34:20 PM io.opentelemetry.api.GlobalOpenTelemetry maybeAutoConfigureAndSetGlobal
+; INFO: AutoConfiguredOpenTelemetrySdk found on classpath but automatic configuration is disabled. To enable, run your JVM with -Dotel.java.global-autoconfigure.enabled=true
+; 
+; Execution error (SQLSyntaxErrorException) at com.mysql.cj.jdbc.exceptions.SQLError/createSQLException (SQLError.java:112).
+; Table 'items.eboshi_migrations' doesn't exist
 clj꞉eboshi.infra.mysql-migration-runner꞉> 
-#:next.jdbc{:update-count 0}
+; Syntax error compiling at (src/eboshi/infra/mysql_migration_runner.clj:0:0).
+; Unable to resolve symbol: with-assert-migrations-table! in this context
 clj꞉eboshi.infra.mysql-migration-runner꞉> 
-nil
+; Syntax error compiling at (src/eboshi/infra/mysql_migration_runner.clj:30:9).
+; Unable to resolve symbol: with-assert-migrations-table! in this context
 clj꞉eboshi.infra.mysql-migration-runner꞉> 
-#:eboshi_migrations{:name "1759880351857CreateItemsTable"}
-clj꞉eboshi.infra.mysql-migration-runner꞉> 
-#:eboshi_migrations{:name "1759880351857CreateItemsTable"}
-clj꞉eboshi.infra.mysql-migration-runner꞉> 
-#'eboshi.infra.mysql-migration-runner/result
-clj꞉eboshi.infra.mysql-migration-runner꞉> 
-#:eboshi_migrations{:name "1759880351857CreateItemsTable"}
-clj꞉eboshi.infra.mysql-migration-runner꞉> 
-"1759880351857CreateItemsTable"
+#'eboshi.infra.mysql-migration-runner/with-assert-migrations-table!
 clj꞉eboshi.infra.mysql-migration-runner꞉> 
 nil
 clj꞉eboshi.infra.mysql-migration-runner꞉> 
+#:eboshi_migrations{:name "Sun"}
+clj꞉eboshi.infra.mysql-migration-runner꞉> 
+#:eboshi_migrations{:name "Sun"}
+clj꞉eboshi.infra.mysql-migration-runner꞉> 
+#:eboshi_migrations{:n "Sun"}
+clj꞉eboshi.infra.mysql-migration-runner꞉> 
+#'eboshi.infra.mysql-migration-runner/with-assert-migrations-table!
+clj꞉eboshi.infra.mysql-migration-runner꞉> 
+#'eboshi.infra.mysql-migration-runner/find-last-migration-name
+clj꞉eboshi.infra.mysql-migration-runner꞉> 
+"Sun"
+clj꞉eboshi.infra.mysql-migration-runner꞉> 
+nil
+clj꞉eboshi.adapters.migrations꞉> 
+nil
+clj꞉eboshi.unit.adapters.mysql.migrations꞉> 
+; nREPL Connection was closed
+; Jacking in...
+; Connecting using "Leiningen" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+; 
+
+; Starting Jack-in: (cd /Users/jose.morista/Documents/Dev/foss/eboshi; lein update-in :dependencies conj '[nrepl,"1.3.1"]' -- update-in :plugins conj '[cider/cider-nrepl,"0.55.4"]' -- update-in '[:repl-options,:nrepl-middleware]' conj '["cider.nrepl/cider-middleware"]' -- repl :headless)
+; Using host:port 127.0.0.1:50868 ...
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+nil
+clj꞉eboshi.core꞉> 
+; Jack-in done.
+clj꞉eboshi.core꞉> 
+nil
+clj꞉eboshi.unit.adapters.mysql.migrations꞉> 
+24
+clj꞉eboshi.unit.adapters.mysql.migrations꞉> 
 ; Execution error (ArityException) at nrepl.middleware.interruptible-eval/evaluator$run$fn (interruptible_eval.clj:106).
-; Wrong number of args (1) passed to: next.jdbc.sql/query
-clj꞉eboshi.infra.mysql-migration-runner꞉> 
-#'eboshi.infra.mysql-migration-runner/result
-clj꞉eboshi.infra.mysql-migration-runner꞉> 
-[#:eboshi_migrations{:name "1759880351857CreateItemsTable"}]
-clj꞉eboshi.infra.mysql-migration-runner꞉> 
-[[#:eboshi_migrations{:name "1759880351857CreateItemsTable"}]]
-clj꞉eboshi.infra.mysql-migration-runner꞉> 
-#:eboshi_migrations{:name "1759880351857CreateItemsTable"}
-clj꞉eboshi.infra.mysql-migration-runner꞉> 
+; Wrong number of args (3) passed to: clojure.test.check.generators/fmap
+clj꞉eboshi.unit.adapters.mysql.migrations꞉> 
+#'eboshi.unit.adapters.mysql.migrations/migration-name-gen
+clj꞉eboshi.unit.adapters.mysql.migrations꞉> 
+"16M/+R:6F'/hU9Eiw U"
+clj꞉eboshi.unit.adapters.mysql.migrations꞉> 
+#'eboshi.unit.adapters.mysql.migrations/migration-name-gen
+clj꞉eboshi.unit.adapters.mysql.migrations꞉> 
+"309qq45Y5EnO6y0Gcrk0FDA"
+clj꞉eboshi.unit.adapters.mysql.migrations꞉> 
+#'eboshi.unit.adapters.mysql.migrations/migration-name-gen
+clj꞉eboshi.unit.adapters.mysql.migrations꞉> 
+#'eboshi.unit.adapters.mysql.migrations/migration-type-gen
+clj꞉eboshi.unit.adapters.mysql.migrations꞉> 
+; Execution error (AssertionError) at clojure.test.check.generators/vector (generators.cljc:607).
+; Assert failed: First arg to vector must be a generator
+; (generator? generator)
+clj꞉eboshi.unit.adapters.mysql.migrations꞉> 
+#'eboshi.unit.adapters.mysql.migrations/migration-instructions-gen
+clj꞉eboshi.unit.adapters.mysql.migrations꞉> 
+#'eboshi.unit.adapters.mysql.migrations/migration-created-at-gen
+clj꞉eboshi.unit.adapters.mysql.migrations꞉> 
+#inst "1970-01-01T00:00:00.000-00:00"
+clj꞉eboshi.unit.adapters.mysql.migrations꞉> 
+#'eboshi.unit.adapters.mysql.migrations/migration-gen
+clj꞉eboshi.unit.adapters.mysql.migrations꞉> 
+; Error printing return value (NullPointerException) at clojure.test.check.generators/call-gen (generators.cljc:43).
+; Cannot invoke "clojure.lang.IFn.invoke(Object, Object)" because "generator_fn" is null
+clj꞉eboshi.unit.adapters.mysql.migrations꞉> 
+; Error printing return value (NullPointerException) at clojure.test.check.generators/call-gen (generators.cljc:43).
+; Cannot invoke "clojure.lang.IFn.invoke(Object, Object)" because "generator_fn" is null
+clj꞉eboshi.unit.adapters.mysql.migrations꞉> 
+; Error printing return value (NullPointerException) at clojure.test.check.generators/call-gen (generators.cljc:43).
+; Cannot invoke "clojure.lang.IFn.invoke(Object, Object)" because "generator_fn" is null
+clj꞉eboshi.unit.adapters.mysql.migrations꞉> 
+; Execution error (NullPointerException) at clojure.test.check.generators/call-gen (generators.cljc:43).
+; Cannot invoke "clojure.lang.IFn.invoke(Object, Object)" because "generator_fn" is null
+clj꞉eboshi.unit.adapters.mysql.migrations꞉> 
+#'eboshi.unit.adapters.mysql.migrations/migration-instructions-gen
+clj꞉eboshi.unit.adapters.mysql.migrations꞉> 
+["create table if not exists users(id int not null primary key)"]
+clj꞉eboshi.unit.adapters.mysql.migrations꞉> 
+#'eboshi.unit.adapters.mysql.migrations/migration-gen
+clj꞉eboshi.unit.adapters.mysql.migrations꞉> 
+; Execution error (NullPointerException) at clojure.test.check.generators/call-gen (generators.cljc:43).
+; Cannot invoke "clojure.lang.IFn.invoke(Object, Object)" because "generator_fn" is null
+clj꞉eboshi.unit.adapters.mysql.migrations꞉> 
+#'eboshi.unit.adapters.mysql.migrations/migration-name-gen
+clj꞉eboshi.unit.adapters.mysql.migrations꞉> 
+#'eboshi.unit.adapters.mysql.migrations/migration-type-gen
+clj꞉eboshi.unit.adapters.mysql.migrations꞉> 
+#'eboshi.unit.adapters.mysql.migrations/migration-instructions-gen
+clj꞉eboshi.unit.adapters.mysql.migrations꞉> 
+#'eboshi.unit.adapters.mysql.migrations/migration-created-at-gen
+clj꞉eboshi.unit.adapters.mysql.migrations꞉> 
+#'eboshi.unit.adapters.mysql.migrations/migration-gen
+clj꞉eboshi.unit.adapters.mysql.migrations꞉> 
+; Execution error (NullPointerException) at clojure.test.check.generators/call-gen (generators.cljc:43).
+; Cannot invoke "clojure.lang.IFn.invoke(Object, Object)" because "generator_fn" is null
+clj꞉eboshi.unit.adapters.mysql.migrations꞉> 
+; Execution error (NullPointerException) at clojure.test.check.generators/call-gen (generators.cljc:43).
+; Cannot invoke "clojure.lang.IFn.invoke(Object, Object)" because "generator_fn" is null
+clj꞉eboshi.unit.adapters.mysql.migrations꞉> 
+#'eboshi.unit.adapters.mysql.migrations/migration-gen
+clj꞉eboshi.unit.adapters.mysql.migrations꞉> 
+; Execution error (NullPointerException) at clojure.test.check.generators/call-gen (generators.cljc:43).
+; Cannot invoke "clojure.lang.IFn.invoke(Object, Object)" because "generator_fn" is null
+clj꞉eboshi.unit.adapters.mysql.migrations꞉> 
+nil
+clj꞉eboshi.unit.adapters.mysql.migrations꞉> 
+#'eboshi.unit.adapters.mysql.migrations/migration-name-gen
+clj꞉eboshi.unit.adapters.mysql.migrations꞉> 
+#'eboshi.unit.adapters.mysql.migrations/migration-type-gen
+clj꞉eboshi.unit.adapters.mysql.migrations꞉> 
+#'eboshi.unit.adapters.mysql.migrations/migration-instructions-gen
+clj꞉eboshi.unit.adapters.mysql.migrations꞉> 
+#'eboshi.unit.adapters.mysql.migrations/migration-created-at-gen
+clj꞉eboshi.unit.adapters.mysql.migrations꞉> 
+#'eboshi.unit.adapters.mysql.migrations/migration-gen
+clj꞉eboshi.unit.adapters.mysql.migrations꞉> 
+; Execution error (NullPointerException) at clojure.test.check.generators/call-gen (generators.cljc:43).
+; Cannot invoke "clojure.lang.IFn.invoke(Object, Object)" because "generator_fn" is null
+clj꞉eboshi.unit.adapters.mysql.migrations꞉> 
+; Evaluating file: migrations.clj
+#'eboshi.unit.adapters.mysql.migrations/migration-gen
+clj꞉eboshi.unit.adapters.mysql.migrations꞉> 
+; Error printing return value (NullPointerException) at clojure.test.check.generators/call-gen (generators.cljc:43).
+; Cannot invoke "clojure.lang.IFn.invoke(Object, Object)" because "generator_fn" is null
+clj꞉eboshi.unit.adapters.mysql.migrations꞉> 
+; Error printing return value (NullPointerException) at clojure.test.check.generators/call-gen (generators.cljc:43).
+; Cannot invoke "clojure.lang.IFn.invoke(Object, Object)" because "generator_fn" is null
+clj꞉eboshi.unit.adapters.mysql.migrations꞉> 
+(:down :down :down :up :down :down :up :up :down :down)
+clj꞉eboshi.unit.adapters.mysql.migrations꞉> 
+:down
+clj꞉eboshi.unit.adapters.mysql.migrations꞉> 
+; Execution error (NullPointerException) at clojure.test.check.generators/call-gen (generators.cljc:43).
+; Cannot invoke "clojure.lang.IFn.invoke(Object, Object)" because "generator_fn" is null
+clj꞉eboshi.unit.adapters.mysql.migrations꞉> 
+#'eboshi.unit.adapters.mysql.migrations/migration-name-gen
+clj꞉eboshi.unit.adapters.mysql.migrations꞉> 
+#'eboshi.unit.adapters.mysql.migrations/migration-name-gen
+clj꞉eboshi.unit.adapters.mysql.migrations꞉> 
+; Execution error (NullPointerException) at clojure.test.check.generators/call-gen (generators.cljc:43).
+; Cannot invoke "clojure.lang.IFn.invoke(Object, Object)" because "generator_fn" is null
+clj꞉eboshi.unit.adapters.mysql.migrations꞉> 
+#'eboshi.unit.adapters.mysql.migrations/migration-name-gen
+clj꞉eboshi.unit.adapters.mysql.migrations꞉> 
+; Execution error (NullPointerException) at clojure.test.check.generators/call-gen (generators.cljc:43).
+; Cannot invoke "clojure.lang.IFn.invoke(Object, Object)" because "generator_fn" is null
+clj꞉eboshi.unit.adapters.mysql.migrations꞉> 
+#'eboshi.unit.adapters.mysql.migrations/migration-name-gen
+clj꞉eboshi.unit.adapters.mysql.migrations꞉> 
+"12-H55E"
+clj꞉eboshi.unit.adapters.mysql.migrations꞉> 
+#'eboshi.unit.adapters.mysql.migrations/migration-gen
+clj꞉eboshi.unit.adapters.mysql.migrations꞉> 
+{:name "7-o5A3xbUki2Yuo85dx3stWCwnP2",
+ :type :up,
+ :instructions ["create table if not exists users(id int not null primary key)" "alter table users"],
+ :created-at #inst "1970-01-01T00:00:00.029-00:00"}
+clj꞉eboshi.unit.adapters.mysql.migrations꞉> 
+#'eboshi.unit.adapters.mysql.migrations/migration-created-at-gen
+clj꞉eboshi.unit.adapters.mysql.migrations꞉> 
+nil
+clj꞉eboshi.unit.adapters.mysql.migrations꞉> 
+; Evaluating file: migrations.clj
+; 
+; Unexpected error (ClassCastException) macroexpanding defspec at (test/eboshi/unit/adapters/mysql/migrations.clj:30:1).
+; class java.lang.String cannot be cast to class clojure.lang.IObj (java.lang.String is in module java.base of loader 'bootstrap'; clojure.lang.IObj is in unnamed module of loader 'app')
+; Evaluation of file migrations.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉eboshi.unit.adapters.mysql.migrations꞉> 
+; Evaluating file: migrations.clj
+#'eboshi.unit.adapters.mysql.migrations/migration->mysql-migration-test
+clj꞉eboshi.unit.adapters.mysql.migrations꞉> 
+#'eboshi.unit.adapters.mysql.migrations/migration->mysql-migration-test
+clj꞉eboshi.unit.adapters.mysql.migrations꞉> 
+; Running tests for the following namespaces:
+;   eboshi.unit.adapters.mysql.migrations
+;   eboshi.unit.adapters.mysql.migrations-test
+
+; 21 tests finished, all passing 👍, ns: 1, vars: 1
+clj꞉eboshi.unit.adapters.mysql.migrations꞉> 
+nil
+clj꞉eboshi.unit.adapters.mysql.migrations꞉> 
+nil
+clj꞉eboshi.integration.services.migrations꞉> 

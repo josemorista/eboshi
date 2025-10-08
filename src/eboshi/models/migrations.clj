@@ -13,4 +13,4 @@
   {:type MigrationType
    :name s/Str
    :created-at s/Inst
-   :instructions s/Str})
+   :instructions [s/Str]})

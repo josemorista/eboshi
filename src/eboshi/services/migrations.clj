@@ -14,7 +14,7 @@
    type :- models.migrations/MigrationType]
   (let [migration (edn/read-string (slurp (fs/join-path instructions-dir migration-name)))
         instructions (get migration type)]
-    (logic.migrations/make-migration migration-name instructions type (Date.))))
+    (logic.migrations/make-migration (:name migration) instructions type (Date.))))
 
 
 (s/defn ^:private get-remaining-migrations-names
@@ -38,11 +38,11 @@
           (protocols.migration-runner/execute runner)))))
 
 (s/defn create [{:keys [migrations-dir]} :- models.migrations/MigrationsConfig migration-name :- s/Str]
-  (let [migration-filename (str (-> (Date.) .getTime) migration-name ".edn")]
+  (let [migration-name-with-ts (str (-> (Date.) .getTime) "-" migration-name)]
     (-> migrations-dir
         fs/assert-dir!
-        (fs/join-path migration-filename)
-        (spit {:name migration-filename :up [] :down []} :append true))))
+        (fs/join-path (str migration-name-with-ts ".edn"))
+        (spit {:name migration-name-with-ts :up [] :down []} :append true))))
 
 (s/defn up! :- (s/maybe models.migrations/Migration)
   [config :- models.migrations/MigrationsConfig
