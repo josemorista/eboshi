@@ -17,7 +17,7 @@
                 (partial con)
                 (apply args))) funcs)))
 
-(s/defn find-last-migration-name :- (s/maybe s/Str)
+(s/defn ^:private find-last-migration-name :- (s/maybe s/Str)
   [con]
   (some-> (jdbc/execute-one! con ["select name from eboshi_migrations order by name desc limit 1;"])
           :eboshi_migrations/name))
