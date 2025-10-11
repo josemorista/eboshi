@@ -2,8 +2,6 @@
   (:require
    [schema.core :as s]))
 
-(s/defschema MigrationDialect (s/enum :sql))
-
 (s/defschema MigrationsConfig
   {:migrations-dir s/Str})
 

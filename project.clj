@@ -7,5 +7,6 @@
                  [prismatic/schema "1.4.1"]
                  [com.github.seancorfield/next.jdbc "1.3.1070"]
                  [com.mysql/mysql-connector-j "9.4.0"]
-                 [org.clojure/test.check "1.1.1"]]
+                 [org.clojure/test.check "1.1.1"]
+                 [org.testcontainers/mysql "1.21.3"]]
   :repl-options {:init-ns eboshi.core})
