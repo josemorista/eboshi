@@ -37,7 +37,7 @@ You can configure this with the setting:
 ; 
 
 ; Starting Jack-in: (cd /home/josemorista/Documents/Dev/foss/eboshi; lein update-in :dependencies conj '[nrepl,"1.3.1"]' -- update-in :plugins conj '[cider/cider-nrepl,"0.55.4"]' -- update-in '[:repl-options,:nrepl-middleware]' conj '["cider.nrepl/cider-middleware"]' -- repl :headless)
-; Using host:port 127.0.0.1:45781 ...
+; Using host:port 127.0.0.1:44259 ...
 ; Hooking up nREPL sessions ...
 ; Connected session: clj
 ; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
@@ -47,445 +47,234 @@ clj꞉eboshi.core꞉> 
 about why stdout printed to this file is prepended with `;` to be line comments."
 clj꞉eboshi.core꞉> 
 ; Jack-in done.
-clj꞉eboshi.core꞉> (name :env/)
-; Syntax error reading source at (REPL:50:30).
-; Invalid token: :env/
 clj꞉eboshi.core꞉> 
-; Syntax error compiling at (test/eboshi/integration/services/eboshi.clj:46:3).
-; Unable to resolve symbol: config-gen in this context
-clj꞉eboshi.integration.services.eboshi꞉> 
-nil
-clj꞉eboshi.integration.services.eboshi꞉> 
-; Evaluating file: eboshi.clj
+0
+clj꞉eboshi.core꞉> 
+[]
+clj꞉eboshi.core꞉> 
+; Execution error at eboshi.core/eval15853 (REPL:25).
+; Unable to convert: class java.lang.Long to Object[]
+clj꞉eboshi.core꞉> 
+; Execution error (IllegalArgumentException) at eboshi.core/eval15894 (REPL:25).
+; Unrecognized type 1
+clj꞉eboshi.core꞉> 
+; Syntax error (ClassNotFoundException) compiling at (src/eboshi/core.clj:57:17).
+; logic.migrations
+clj꞉eboshi.core꞉> 
+; Evaluating file: core.clj
 ; 
-; Testing eboshi.integration.services.eboshi
-; {:type :clojure.test.check.clojure-test/shrunk, :clojure.test.check.clojure-test/property #clojure.test.check.generators.Generator{:gen #function[clojure.test.check.generators/gen-fmap/fn--5282]}, :clojure.test.check.clojure-test/params [{:runner :mysql, :migrations-dir "", :spec {:user "", :password ""}} "/tmp/_.edn"]}
-; 
-; ERROR in (load-config-test) (eboshi.clj:49)
-; Uncaught exception, not in assertion.
-; expected: nil
-;   actual: java.lang.ClassCastException: class java.lang.Boolean cannot be cast to class clojure.lang.IFn (java.lang.Boolean is in module java.base of loader 'bootstrap'; clojure.lang.IFn is in unnamed module of loader 'app')
-;  at eboshi.integration.services.eboshi$load_config_test$fn__13599.invoke (eboshi.clj:49)
-;     clojure.lang.AFn.applyToHelper (AFn.java:156)
-;     clojure.lang.AFn.applyTo (AFn.java:144)
-;     clojure.core$apply.invokeStatic (core.clj:667)
-;     clojure.core$apply.invoke (core.clj:662)
-;     clojure.test.check.properties$apply_gen$fn__13378$fn__13379.invoke (properties.cljc:31)
-;     clojure.test.check.properties$apply_gen$fn__13378.invoke (properties.cljc:30)
-;     clojure.test.check.rose_tree$fmap.invokeStatic (rose_tree.cljc:77)
-;     clojure.test.check.rose_tree$fmap.invoke (rose_tree.cljc:73)
-;     clojure.test.check.generators$fmap$fn__5308.invoke (generators.cljc:104)
-;     clojure.test.check.generators$gen_fmap$fn__5282.invoke (generators.cljc:59)
-;     clojure.test.check.generators$call_gen.invokeStatic (generators.cljc:43)
-;     clojure.test.check.generators$call_gen.invoke (generators.cljc:39)
-;     clojure.test.check$quick_check.invokeStatic (check.cljc:211)
-;     clojure.test.check$quick_check.doInvoke (check.cljc:59)
-;     clojure.lang.RestFn.applyTo (RestFn.java:142)
-;     clojure.core$apply.invokeStatic (core.clj:671)
-;     clojure.core$apply.invoke (core.clj:662)
-;     eboshi.integration.services.eboshi$load_config_test.invokeStatic (eboshi.clj:44)
-;     eboshi.integration.services.eboshi$load_config_test.doInvoke (eboshi.clj:44)
-;     clojure.lang.RestFn.applyTo (RestFn.java:139)
-;     clojure.core$apply.invokeStatic (core.clj:669)
-;     clojure.core$apply.invoke (core.clj:662)
-;     eboshi.integration.services.eboshi$load_config_test.invokeStatic (eboshi.clj:44)
-;     eboshi.integration.services.eboshi$load_config_test.invoke (eboshi.clj:44)
-;     eboshi.integration.services.eboshi$fn__13595.invokeStatic (eboshi.clj:44)
-;     eboshi.integration.services.eboshi/fn (eboshi.clj:44)
-;     clojure.test$test_var$fn__9856.invoke (test.clj:717)
-;     clojure.test$test_var.invokeStatic (test.clj:717)
-;     clojure.test$test_var.invoke (test.clj:708)
-;     clojure.test$test_vars$fn__9882$fn__9887.invoke (test.clj:735)
-;     clojure.test$default_fixture.invokeStatic (test.clj:687)
-;     clojure.test$default_fixture.invoke (test.clj:683)
-;     clojure.test$test_vars$fn__9882.invoke (test.clj:735)
-;     schema.test$validate_schemas$fn13026__13036$fn__13037.invoke (test.cljc:12)
-;     schema.test$validate_schemas$fn13026__13036.invoke (test.cljc:12)
-;     schema.test$validate_schemas.invokeStatic (test.cljc:12)
-;     schema.test$validate_schemas.invoke (test.cljc:7)
-;     clojure.test$compose_fixtures$fn__9850$fn__9851.invoke (test.clj:694)
-;     clojure.test$default_fixture.invokeStatic (test.clj:687)
-;     clojure.test$default_fixture.invoke (test.clj:683)
-;     clojure.test$compose_fixtures$fn__9850.invoke (test.clj:694)
-;     clojure.test$test_vars.invokeStatic (test.clj:731)
-;     clojure.test$run_test_var.invokeStatic (test.clj:802)
-;     clojure.test$run_test_var.invoke (test.clj:797)
-;     eboshi.integration.services.eboshi$eval13609.invokeStatic (eboshi.clj:63)
-;     eboshi.integration.services.eboshi$eval13609.invoke (eboshi.clj:63)
-;     clojure.lang.Compiler.eval (Compiler.java:7194)
-;     clojure.lang.Compiler.load (Compiler.java:7653)
-;     eboshi.core$eval13563.invokeStatic (NO_SOURCE_FILE:1)
-;     eboshi.core$eval13563.invoke (NO_SOURCE_FILE:1)
-;     clojure.lang.Compiler.eval (Compiler.java:7194)
-;     nrepl.middleware.interruptible_eval$evaluator$run__1458$fn__1469.invoke (interruptible_eval.clj:106)
-;     nrepl.middleware.interruptible_eval$evaluator$run__1458.invoke (interruptible_eval.clj:101)
-;     nrepl.middleware.session$session_exec$session_loop__1542.invoke (session.clj:230)
-;     nrepl.SessionThread.run (SessionThread.java:21)
-; 
-; Ran 1 tests containing 2 assertions.
-; 0 failures, 1 errors.
-{:test 1, :pass 1, :fail 0, :error 1, :type :summary}
-clj꞉eboshi.integration.services.eboshi꞉> 
-; 
-; Testing eboshi.integration.services.eboshi
-; {:type :clojure.test.check.clojure-test/shrunk, :clojure.test.check.clojure-test/property #clojure.test.check.generators.Generator{:gen #function[clojure.test.check.generators/gen-fmap/fn--5282]}, :clojure.test.check.clojure-test/params [{:runner :mysql, :migrations-dir "", :spec {:user "", :password ""}} "/tmp/_.edn"]}
-; 
-; ERROR in (load-config-test) (eboshi.clj:49)
-; Uncaught exception, not in assertion.
-; expected: nil
-;   actual: java.lang.ClassCastException: class java.lang.Boolean cannot be cast to class clojure.lang.IFn (java.lang.Boolean is in module java.base of loader 'bootstrap'; clojure.lang.IFn is in unnamed module of loader 'app')
-;  at eboshi.integration.services.eboshi$load_config_test$fn__13599.invoke (eboshi.clj:49)
-;     clojure.lang.AFn.applyToHelper (AFn.java:156)
-;     clojure.lang.AFn.applyTo (AFn.java:144)
-;     clojure.core$apply.invokeStatic (core.clj:667)
-;     clojure.core$apply.invoke (core.clj:662)
-;     clojure.test.check.properties$apply_gen$fn__13378$fn__13379.invoke (properties.cljc:31)
-;     clojure.test.check.properties$apply_gen$fn__13378.invoke (properties.cljc:30)
-;     clojure.test.check.rose_tree$fmap.invokeStatic (rose_tree.cljc:77)
-;     clojure.test.check.rose_tree$fmap.invoke (rose_tree.cljc:73)
-;     clojure.test.check.generators$fmap$fn__5308.invoke (generators.cljc:104)
-;     clojure.test.check.generators$gen_fmap$fn__5282.invoke (generators.cljc:59)
-;     clojure.test.check.generators$call_gen.invokeStatic (generators.cljc:43)
-;     clojure.test.check.generators$call_gen.invoke (generators.cljc:39)
-;     clojure.test.check$quick_check.invokeStatic (check.cljc:211)
-;     clojure.test.check$quick_check.doInvoke (check.cljc:59)
-;     clojure.lang.RestFn.applyTo (RestFn.java:142)
-;     clojure.core$apply.invokeStatic (core.clj:671)
-;     clojure.core$apply.invoke (core.clj:662)
-;     eboshi.integration.services.eboshi$load_config_test.invokeStatic (eboshi.clj:44)
-;     eboshi.integration.services.eboshi$load_config_test.doInvoke (eboshi.clj:44)
-;     clojure.lang.RestFn.applyTo (RestFn.java:139)
-;     clojure.core$apply.invokeStatic (core.clj:669)
-;     clojure.core$apply.invoke (core.clj:662)
-;     eboshi.integration.services.eboshi$load_config_test.invokeStatic (eboshi.clj:44)
-;     eboshi.integration.services.eboshi$load_config_test.invoke (eboshi.clj:44)
-;     eboshi.integration.services.eboshi$fn__13595.invokeStatic (eboshi.clj:44)
-;     eboshi.integration.services.eboshi/fn (eboshi.clj:44)
-;     clojure.test$test_var$fn__9856.invoke (test.clj:717)
-;     clojure.test$test_var.invokeStatic (test.clj:717)
-;     clojure.test$test_var.invoke (test.clj:708)
-;     clojure.test$test_vars$fn__9882$fn__9887.invoke (test.clj:735)
-;     clojure.test$default_fixture.invokeStatic (test.clj:687)
-;     clojure.test$default_fixture.invoke (test.clj:683)
-;     clojure.test$test_vars$fn__9882.invoke (test.clj:735)
-;     schema.test$validate_schemas$fn13026__13036$fn__13037.invoke (test.cljc:12)
-;     schema.test$validate_schemas$fn13026__13036.invoke (test.cljc:12)
-;     schema.test$validate_schemas.invokeStatic (test.cljc:12)
-;     schema.test$validate_schemas.invoke (test.cljc:7)
-;     clojure.test$compose_fixtures$fn__9850$fn__9851.invoke (test.clj:694)
-;     clojure.test$default_fixture.invokeStatic (test.clj:687)
-;     clojure.test$default_fixture.invoke (test.clj:683)
-;     clojure.test$compose_fixtures$fn__9850.invoke (test.clj:694)
-;     clojure.test$test_vars.invokeStatic (test.clj:731)
-;     clojure.test$run_test_var.invokeStatic (test.clj:802)
-;     clojure.test$run_test_var.invoke (test.clj:797)
-;     eboshi.integration.services.eboshi$eval13611.invokeStatic (NO_SOURCE_FILE:63)
-;     eboshi.integration.services.eboshi$eval13611.invoke (NO_SOURCE_FILE:63)
-;     clojure.lang.Compiler.eval (Compiler.java:7194)
-;     nrepl.middleware.interruptible_eval$evaluator$run__1458$fn__1469.invoke (interruptible_eval.clj:106)
-;     nrepl.middleware.interruptible_eval$evaluator$run__1458.invoke (interruptible_eval.clj:101)
-;     nrepl.middleware.session$session_exec$session_loop__1542.invoke (session.clj:230)
-;     nrepl.SessionThread.run (SessionThread.java:21)
-; 
-; Ran 1 tests containing 2 assertions.
-; 0 failures, 1 errors.
-{:test 1, :pass 1, :fail 0, :error 1, :type :summary}
-clj꞉eboshi.integration.services.eboshi꞉> 
-#'eboshi.integration.services.eboshi/load-config-test
-clj꞉eboshi.integration.services.eboshi꞉> 
-; 
-; Testing eboshi.integration.services.eboshi
-; {:runner :mysql, :migrations-dir , :spec {:user , :password }} /tmp/_.edn
-; {:type :clojure.test.check.clojure-test/shrunk, :clojure.test.check.clojure-test/property #clojure.test.check.generators.Generator{:gen #function[clojure.test.check.generators/gen-fmap/fn--5282]}, :clojure.test.check.clojure-test/params [{:runner :mysql, :migrations-dir "", :spec {:user "", :password ""}} "/tmp/_.edn"]}
-; 
-; ERROR in (load-config-test) (NO_SOURCE_FILE:50)
-; Uncaught exception, not in assertion.
-; expected: nil
-;   actual: java.lang.ClassCastException: class java.lang.Boolean cannot be cast to class clojure.lang.IFn (java.lang.Boolean is in module java.base of loader 'bootstrap'; clojure.lang.IFn is in unnamed module of loader 'app')
-;  at eboshi.integration.services.eboshi$load_config_test$fn__13621.invoke (NO_SOURCE_FILE:50)
-;     clojure.lang.AFn.applyToHelper (AFn.java:156)
-;     clojure.lang.AFn.applyTo (AFn.java:144)
-;     clojure.core$apply.invokeStatic (core.clj:667)
-;     clojure.core$apply.invoke (core.clj:662)
-;     clojure.test.check.properties$apply_gen$fn__13378$fn__13379.invoke (properties.cljc:31)
-;     clojure.test.check.properties$apply_gen$fn__13378.invoke (properties.cljc:30)
-;     clojure.test.check.rose_tree$fmap.invokeStatic (rose_tree.cljc:77)
-;     clojure.test.check.rose_tree$fmap.invoke (rose_tree.cljc:73)
-;     clojure.test.check.generators$fmap$fn__5308.invoke (generators.cljc:104)
-;     clojure.test.check.generators$gen_fmap$fn__5282.invoke (generators.cljc:59)
-;     clojure.test.check.generators$call_gen.invokeStatic (generators.cljc:43)
-;     clojure.test.check.generators$call_gen.invoke (generators.cljc:39)
-;     clojure.test.check$quick_check.invokeStatic (check.cljc:211)
-;     clojure.test.check$quick_check.doInvoke (check.cljc:59)
-;     clojure.lang.RestFn.applyTo (RestFn.java:142)
-;     clojure.core$apply.invokeStatic (core.clj:671)
-;     clojure.core$apply.invoke (core.clj:662)
-;     eboshi.integration.services.eboshi$load_config_test.invokeStatic (NO_SOURCE_FILE:44)
-;     eboshi.integration.services.eboshi$load_config_test.doInvoke (NO_SOURCE_FILE:44)
-;     clojure.lang.RestFn.applyTo (RestFn.java:139)
-;     clojure.core$apply.invokeStatic (core.clj:669)
-;     clojure.core$apply.invoke (core.clj:662)
-;     eboshi.integration.services.eboshi$load_config_test.invokeStatic (NO_SOURCE_FILE:44)
-;     eboshi.integration.services.eboshi$load_config_test.invoke (NO_SOURCE_FILE:44)
-;     eboshi.integration.services.eboshi$fn__13617.invokeStatic (NO_SOURCE_FILE:44)
-;     eboshi.integration.services.eboshi/fn (NO_SOURCE_FILE:44)
-;     clojure.test$test_var$fn__9856.invoke (test.clj:717)
-;     clojure.test$test_var.invokeStatic (test.clj:717)
-;     clojure.test$test_var.invoke (test.clj:708)
-;     clojure.test$test_vars$fn__9882$fn__9887.invoke (test.clj:735)
-;     clojure.test$default_fixture.invokeStatic (test.clj:687)
-;     clojure.test$default_fixture.invoke (test.clj:683)
-;     clojure.test$test_vars$fn__9882.invoke (test.clj:735)
-;     schema.test$validate_schemas$fn13026__13036$fn__13037.invoke (test.cljc:12)
-;     schema.test$validate_schemas$fn13026__13036.invoke (test.cljc:12)
-;     schema.test$validate_schemas.invokeStatic (test.cljc:12)
-;     schema.test$validate_schemas.invoke (test.cljc:7)
-;     clojure.test$compose_fixtures$fn__9850$fn__9851.invoke (test.clj:694)
-;     clojure.test$default_fixture.invokeStatic (test.clj:687)
-;     clojure.test$default_fixture.invoke (test.clj:683)
-;     clojure.test$compose_fixtures$fn__9850.invoke (test.clj:694)
-;     clojure.test$test_vars.invokeStatic (test.clj:731)
-;     clojure.test$run_test_var.invokeStatic (test.clj:802)
-;     clojure.test$run_test_var.invoke (test.clj:797)
-;     eboshi.integration.services.eboshi$eval13631.invokeStatic (NO_SOURCE_FILE:64)
-;     eboshi.integration.services.eboshi$eval13631.invoke (NO_SOURCE_FILE:64)
-;     clojure.lang.Compiler.eval (Compiler.java:7194)
-;     nrepl.middleware.interruptible_eval$evaluator$run__1458$fn__1469.invoke (interruptible_eval.clj:106)
-;     nrepl.middleware.interruptible_eval$evaluator$run__1458.invoke (interruptible_eval.clj:101)
-;     nrepl.middleware.session$session_exec$session_loop__1542.invoke (session.clj:230)
-;     nrepl.SessionThread.run (SessionThread.java:21)
-; 
-; Ran 1 tests containing 2 assertions.
-; 0 failures, 1 errors.
-{:test 1, :pass 1, :fail 0, :error 1, :type :summary}
-clj꞉eboshi.integration.services.eboshi꞉> 
-#'eboshi.logic.migrations/env-config-value?
-clj꞉eboshi.logic.migrations꞉> 
-#'eboshi.logic.migrations/parse-config-options
-clj꞉eboshi.logic.migrations꞉> 
-; Syntax error reading source at (REPL:30:84).
-; Map literal must contain an even number of forms
-clj꞉eboshi.logic.migrations꞉> 
-{:user "", :password ""}
-clj꞉eboshi.logic.migrations꞉> 
-{:user :password}
-clj꞉eboshi.logic.migrations꞉> 
-; Syntax error reading source at (REPL:30:47).
-; Map literal must contain an even number of forms
-clj꞉eboshi.logic.migrations꞉> 
-#'eboshi.integration.services.eboshi/load-config-test
-clj꞉eboshi.integration.services.eboshi꞉> 
-; 
-; Testing eboshi.integration.services.eboshi
-; {:runner :mysql, :migrations-dir , :spec {:user , :password }} /tmp/_.edn
-; {:type :clojure.test.check.clojure-test/shrunk, :clojure.test.check.clojure-test/property #clojure.test.check.generators.Generator{:gen #function[clojure.test.check.generators/gen-fmap/fn--5282]}, :clojure.test.check.clojure-test/params [{:runner :mysql, :migrations-dir "", :spec {:user "", :password ""}} "/tmp/_.edn"]}
-; 
-; ERROR in (load-config-test) (NO_SOURCE_FILE:50)
-; Uncaught exception, not in assertion.
-; expected: nil
-;   actual: java.lang.ClassCastException: class java.lang.Boolean cannot be cast to class clojure.lang.IFn (java.lang.Boolean is in module java.base of loader 'bootstrap'; clojure.lang.IFn is in unnamed module of loader 'app')
-;  at eboshi.integration.services.eboshi$load_config_test$fn__13716.invoke (NO_SOURCE_FILE:50)
-;     clojure.lang.AFn.applyToHelper (AFn.java:156)
-;     clojure.lang.AFn.applyTo (AFn.java:144)
-;     clojure.core$apply.invokeStatic (core.clj:667)
-;     clojure.core$apply.invoke (core.clj:662)
-;     clojure.test.check.properties$apply_gen$fn__13378$fn__13379.invoke (properties.cljc:31)
-;     clojure.test.check.properties$apply_gen$fn__13378.invoke (properties.cljc:30)
-;     clojure.test.check.rose_tree$fmap.invokeStatic (rose_tree.cljc:77)
-;     clojure.test.check.rose_tree$fmap.invoke (rose_tree.cljc:73)
-;     clojure.test.check.generators$fmap$fn__5308.invoke (generators.cljc:104)
-;     clojure.test.check.generators$gen_fmap$fn__5282.invoke (generators.cljc:59)
-;     clojure.test.check.generators$call_gen.invokeStatic (generators.cljc:43)
-;     clojure.test.check.generators$call_gen.invoke (generators.cljc:39)
-;     clojure.test.check$quick_check.invokeStatic (check.cljc:211)
-;     clojure.test.check$quick_check.doInvoke (check.cljc:59)
-;     clojure.lang.RestFn.applyTo (RestFn.java:142)
-;     clojure.core$apply.invokeStatic (core.clj:671)
-;     clojure.core$apply.invoke (core.clj:662)
-;     eboshi.integration.services.eboshi$load_config_test.invokeStatic (NO_SOURCE_FILE:44)
-;     eboshi.integration.services.eboshi$load_config_test.doInvoke (NO_SOURCE_FILE:44)
-;     clojure.lang.RestFn.applyTo (RestFn.java:139)
-;     clojure.core$apply.invokeStatic (core.clj:669)
-;     clojure.core$apply.invoke (core.clj:662)
-;     eboshi.integration.services.eboshi$load_config_test.invokeStatic (NO_SOURCE_FILE:44)
-;     eboshi.integration.services.eboshi$load_config_test.invoke (NO_SOURCE_FILE:44)
-;     eboshi.integration.services.eboshi$fn__13712.invokeStatic (NO_SOURCE_FILE:44)
-;     eboshi.integration.services.eboshi/fn (NO_SOURCE_FILE:44)
-;     clojure.test$test_var$fn__9856.invoke (test.clj:717)
-;     clojure.test$test_var.invokeStatic (test.clj:717)
-;     clojure.test$test_var.invoke (test.clj:708)
-;     clojure.test$test_vars$fn__9882$fn__9887.invoke (test.clj:735)
-;     clojure.test$default_fixture.invokeStatic (test.clj:687)
-;     clojure.test$default_fixture.invoke (test.clj:683)
-;     clojure.test$test_vars$fn__9882.invoke (test.clj:735)
-;     schema.test$validate_schemas$fn13026__13036$fn__13037.invoke (test.cljc:12)
-;     schema.test$validate_schemas$fn13026__13036.invoke (test.cljc:12)
-;     schema.test$validate_schemas.invokeStatic (test.cljc:12)
-;     schema.test$validate_schemas.invoke (test.cljc:7)
-;     clojure.test$compose_fixtures$fn__9850$fn__9851.invoke (test.clj:694)
-;     clojure.test$default_fixture.invokeStatic (test.clj:687)
-;     clojure.test$default_fixture.invoke (test.clj:683)
-;     clojure.test$compose_fixtures$fn__9850.invoke (test.clj:694)
-;     clojure.test$test_vars.invokeStatic (test.clj:731)
-;     clojure.test$run_test_var.invokeStatic (test.clj:802)
-;     clojure.test$run_test_var.invoke (test.clj:797)
-;     eboshi.integration.services.eboshi$eval13726.invokeStatic (NO_SOURCE_FILE:64)
-;     eboshi.integration.services.eboshi$eval13726.invoke (NO_SOURCE_FILE:64)
-;     clojure.lang.Compiler.eval (Compiler.java:7194)
-;     nrepl.middleware.interruptible_eval$evaluator$run__1458$fn__1469.invoke (interruptible_eval.clj:106)
-;     nrepl.middleware.interruptible_eval$evaluator$run__1458.invoke (interruptible_eval.clj:101)
-;     nrepl.middleware.session$session_exec$session_loop__1542.invoke (session.clj:230)
-;     nrepl.SessionThread.run (SessionThread.java:21)
-; 
-; Ran 1 tests containing 2 assertions.
-; 0 failures, 1 errors.
-{:test 1, :pass 1, :fail 0, :error 1, :type :summary}
-clj꞉eboshi.integration.services.eboshi꞉> 
-#'eboshi.integration.services.eboshi/load-config-test
-clj꞉eboshi.integration.services.eboshi꞉> 
-; 
-; Testing eboshi.integration.services.eboshi
-; {:runner :mysql, :migrations-dir , :spec {:user , :password }} /tmp/_.edn
-; {:runner :mysql, :migrations-dir g, :spec {:user , :password }} /tmp/_.edn
-; {:runner :mysql, :migrations-dir , :spec {:user , :password d}} /tmp/V2_.edn
-; {:runner :mysql, :migrations-dir , :spec {:user 9S, :password \d_}} /tmp/q_.edn
-; {:runner :mysql, :migrations-dir , :spec {:user , :password 0jn_}} /tmp/1eZA_.edn
-; {:result true, :num-tests 5, :seed 1760480685826, :time-elapsed-ms 7, :test-var "load-config-test"}
-; 
-; Ran 1 tests containing 6 assertions.
-; 0 failures, 0 errors.
-{:test 1, :pass 6, :fail 0, :error 0, :type :summary}
-clj꞉eboshi.integration.services.eboshi꞉> 
-#'eboshi.integration.services.eboshi/load-config-test
-clj꞉eboshi.integration.services.eboshi꞉> 
-; 
-; Testing eboshi.integration.services.eboshi
-; {:result true, :num-tests 10, :seed 1760480743369, :time-elapsed-ms 25, :test-var "load-config-test"}
-; 
-; Ran 1 tests containing 11 assertions.
-; 0 failures, 0 errors.
-{:test 1, :pass 11, :fail 0, :error 0, :type :summary}
-clj꞉eboshi.integration.services.eboshi꞉> 
-#'eboshi.integration.services.eboshi/load-config-test
-clj꞉eboshi.integration.services.eboshi꞉> 
-; 
-; Testing eboshi.integration.services.eboshi
-; 
-; FAIL in (load-config-test) (NO_SOURCE_FILE:54)
-; expected: (= {:runner (:runner config), :config {:migrations-dir (:migrations-dir config)}, :spec {:user (-> config :spec :user), :password pass-env-var}} (services.eboshi/load-config config-file-path))
-;   actual: (not (= {:runner :mysql, :config {:migrations-dir ""}, :spec {:user "", :password "DUMMY_PASSWORD"}} {:runner :mysql, :config {:migrations-dir ""}, :spec {:user "", :password ""}}))
-; {:type :clojure.test.check.clojure-test/shrunk, :clojure.test.check.clojure-test/property #clojure.test.check.generators.Generator{:gen #function[clojure.test.check.generators/gen-fmap/fn--5282]}, :clojure.test.check.clojure-test/params [{:runner :mysql, :migrations-dir "", :spec {:user "", :password ""}} "/tmp/_.edn"]}
-; 
-; FAIL in (load-config-test) (NO_SOURCE_FILE:44)
-; expected: {:result true}
-;   actual: {:shrunk {:total-nodes-visited 0, :depth 0, :pass? false, :result false, :result-data nil, :time-shrinking-ms 1, :smallest [{:runner :mysql, :migrations-dir "", :spec {:user "", :password ""}} "/tmp/_.edn"]}, :failed-after-ms 4, :num-tests 1, :seed 1760480761934, :fail [{:runner :mysql, :migrations-dir "", :spec {:user "", :password ""}} "/tmp/_.edn"], :result false, :result-data nil, :failing-size 0, :pass? false, :test-var "load-config-test"}
-; 
-; Ran 1 tests containing 2 assertions.
-; 2 failures, 0 errors.
-{:test 1, :pass 0, :fail 2, :error 0, :type :summary}
-clj꞉eboshi.integration.services.eboshi꞉> 
-nil
-clj꞉eboshi.logic.eboshi꞉> 
-nil
-clj꞉eboshi.services.eboshi꞉> 
-; Syntax error compiling at (src/eboshi/logic/eboshi.clj:13:18).
-; Unable to resolve symbol: env-config-value? in this context
-clj꞉eboshi.logic.eboshi꞉> 
-#'eboshi.logic.eboshi/env-config-value?
-clj꞉eboshi.logic.eboshi꞉> 
-#'eboshi.logic.eboshi/parse-config-options
-clj꞉eboshi.logic.eboshi꞉> 
-#'eboshi.logic.eboshi/parse-config-options
-clj꞉eboshi.logic.eboshi꞉> 
-#'eboshi.services.eboshi/load-config
-clj꞉eboshi.services.eboshi꞉> 
-#'eboshi.services.eboshi/init!
-clj꞉eboshi.services.eboshi꞉> 
-; Evaluating file: eboshi.clj
-#'eboshi.integration.services.eboshi/load-config-test
-clj꞉eboshi.integration.services.eboshi꞉> 
-nil
-clj꞉eboshi.integration.services.eboshi꞉> 
-; Running tests for the following namespaces:
-;   eboshi.integration.services.eboshi
-;   eboshi.integration.services.eboshi-test
-
-; /tmp/_.edn :mysql
-; /tmp/4_.edn :mysql
-; /tmp/_.edn :mysql
-; /tmp/_.edn :mysql
-; /tmp/_.edn :mysql
-; /tmp/GRh_.edn :mysql
-; /tmp/_.edn :mysql
-; /tmp/tGPx_.edn :mysql
-; /tmp/zOTJo_.edn :mysql
-; /tmp/7M_.edn :mysql
-; FAIL in eboshi.integration.services.eboshi/load-config-test (eboshi.clj:54):
-; expected:
-(=
- {:config {:migrations-dir (:migrations-dir config)},
-  :runner (:runner config),
-  :spec {:password pass-env-var, :user (-> config :spec :user)}}
- (services.eboshi/load-config config-file-path))
-
-; actual:
-(not
- (=
-  {:config {:migrations-dir ""},
-   :runner :mysql,
-   :spec {:password "DUMMY_PASSWORD", :user ""}}
-  {:config {:migrations-dir ""},
-   :runner :mysql,
-   :spec {:password "", :user ""}}))
-
-; FAIL in eboshi.integration.services.eboshi/load-config-test (eboshi.clj:44):
-; expected:
-{:result true}
-
-; actual:
-{:fail
- [{:migrations-dir "", :runner :mysql, :spec {:password "", :user ""}}
-  "/tmp/_.edn"],
- :failed-after-ms 14,
- :failing-size 0,
- :num-tests 1,
- :pass? false,
- :result false,
- :result-data nil,
- :seed 1760481176631,
- :shrunk
- {:depth 0,
-  :pass? false,
-  :result false,
-  :result-data nil,
-  :smallest
-  [{:migrations-dir "", :runner :mysql, :spec {:password "", :user ""}}
-   "/tmp/_.edn"],
-  :time-shrinking-ms 0,
-  :total-nodes-visited 0},
- :test-var "load-config-test"}
-
-; 13 tests finished, problems found. 😭 errors: 0, failures: 2, ns: 1, vars: 2
-clj꞉eboshi.integration.services.eboshi꞉> 
-#'eboshi.integration.services.eboshi/load-config-test
-clj꞉eboshi.integration.services.eboshi꞉> 
-; Running tests for the following namespaces:
-;   eboshi.integration.services.eboshi
-;   eboshi.integration.services.eboshi-test
-
-; /tmp/_.edn :mysql
-; /tmp/_.edn :mysql
-; /tmp/mf_.edn :mysql
-; /tmp/p_.edn :mysql
-; /tmp/Q_.edn :mysql
-; /tmp/J5U_.edn :mysql
-; /tmp/xy_.edn :mysql
-; /tmp/L1hG9Lp_.edn :mysql
-; /tmp/8KFQ7Q_.edn :mysql
-; /tmp/9jNZab6B_.edn :mysql
-; 22 tests finished, all passing 👍, ns: 1, vars: 2
-clj꞉eboshi.integration.services.eboshi꞉> 
-nil
+; Syntax error compiling at (src/eboshi/core.clj:31:9).
+; No such var: services.migrations/up!
+; Evaluation of file core.clj failed: class clojure.lang.Compiler$CompilerException
 clj꞉eboshi.core꞉> 
 nil
+clj꞉eboshi.core꞉> 
+; Evaluating file: core.clj
+; 
+; Syntax error compiling at (src/eboshi/core.clj:31:9).
+; No such var: services.migrations/up!
+; Evaluation of file core.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉eboshi.core꞉> 
+; Evaluating file: migrations.clj
+#'eboshi.services.migrations/sync!
+clj꞉eboshi.services.migrations꞉> 
+; Evaluating file: core.clj
+#'eboshi.core/create!
+clj꞉eboshi.core꞉> 
+; Evaluating file: core.clj
+#'eboshi.core/create!
+clj꞉eboshi.core꞉> 
+#'eboshi.core/create!
+clj꞉eboshi.core꞉> 
+; Syntax error (IllegalStateException) compiling def at (src/eboshi/core.clj:62:1).
+; init! already refers to: #'eboshi.services.eboshi/init! in namespace: eboshi.core
+clj꞉eboshi.core꞉> 
+nil
+clj꞉eboshi.core꞉> 
+; Syntax error (IllegalStateException) compiling def at (src/eboshi/core.clj:62:1).
+; init! already refers to: #'eboshi.services.eboshi/init! in namespace: eboshi.core
+clj꞉eboshi.core꞉> 
+; Syntax error (IllegalStateException) compiling def at (src/eboshi/core.clj:62:1).
+; init! already refers to: #'eboshi.services.eboshi/init! in namespace: eboshi.core
+clj꞉eboshi.core꞉> 
+; Syntax error (IllegalStateException) compiling def at (src/eboshi/core.clj:62:1).
+; init! already refers to: #'eboshi.services.eboshi/init! in namespace: eboshi.core
+clj꞉eboshi.core꞉> 
+nil
+clj꞉eboshi.core꞉> 
+; Syntax error (IllegalStateException) compiling def at (src/eboshi/core.clj:62:1).
+; init! already refers to: #'eboshi.services.eboshi/init! in namespace: eboshi.core
+clj꞉eboshi.core꞉> 
+; Evaluating file: core.clj
+; 
+; Syntax error (IllegalStateException) compiling def at (src/eboshi/core.clj:62:1).
+; init! already refers to: #'eboshi.services.eboshi/init! in namespace: eboshi.core
+; Evaluation of file core.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉eboshi.core꞉> 
+; Syntax error (IllegalStateException) compiling def at (src/eboshi/core.clj:62:1).
+; init! already refers to: #'eboshi.services.eboshi/init! in namespace: eboshi.core
+clj꞉eboshi.core꞉> 
+; Syntax error (IllegalStateException) compiling def at (src/eboshi/core.clj:62:1).
+; init! already refers to: #'eboshi.services.eboshi/init! in namespace: eboshi.core
+clj꞉eboshi.core꞉> 
+; nREPL Connection was closed
+; Jacking in...
+; Connecting using "Leiningen" project type.
+; You can make Calva auto-select this.
+;   - See https://calva.io/connect-sequences/
+; 
+
+; Starting Jack-in: (cd /home/josemorista/Documents/Dev/foss/eboshi; lein update-in :dependencies conj '[nrepl,"1.3.1"]' -- update-in :plugins conj '[cider/cider-nrepl,"0.55.4"]' -- update-in '[:repl-options,:nrepl-middleware]' conj '["cider.nrepl/cider-middleware"]' -- repl :headless)
+; Using host:port 127.0.0.1:34227 ...
+; Hooking up nREPL sessions ...
+; Connected session: clj
+; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
+nil
+clj꞉eboshi.core꞉> 
+; Jack-in done.
+clj꞉eboshi.core꞉> 
+; Syntax error compiling at (src/eboshi/core.clj:62:35).
+; Unable to resolve symbol: make-eboshi-config in this context
+clj꞉eboshi.core꞉> 
+; Evaluating file: core.clj
+#'eboshi.core/init!
+clj꞉eboshi.core꞉> 
+#'eboshi.core/create!
+clj꞉eboshi.core꞉> 
+; Execution error (NullPointerException) at eboshi.logic.fs/eval4862$is-dir?$fn (fs.clj:12).
+; Cannot invoke "java.io.File.exists()" because "f" is null
+clj꞉eboshi.core꞉> 
+#'eboshi.core/create!
+clj꞉eboshi.core꞉> 
+; {:migrations-dir nil} CreateItemsTable
+; Execution error (NullPointerException) at eboshi.logic.fs/eval4862$is-dir?$fn (fs.clj:12).
+; Cannot invoke "java.io.File.exists()" because "f" is null
+clj꞉eboshi.core꞉> 
+; Syntax error compiling at (src/eboshi/core.clj:62:35).
+; Unable to resolve symbol: config-file-path in this context
+clj꞉eboshi.core꞉> 
+{:runner ":mysql", :config {:migrations-dir "./migrations"}, :spec {}}
+clj꞉eboshi.core꞉> 
+#'eboshi.core/create!
+clj꞉eboshi.core꞉> 
+; nil
+; Execution error (NullPointerException) at eboshi.logic.fs/eval4862$is-dir?$fn (fs.clj:12).
+; Cannot invoke "java.io.File.exists()" because "f" is null
+clj꞉eboshi.core꞉> 
+#'eboshi.core/create!
+clj꞉eboshi.core꞉> 
+; {:runner :mysql, :config {:migrations-dir ./migrations}, :spec {}}
+; Execution error (NullPointerException) at eboshi.logic.fs/eval4862$is-dir?$fn (fs.clj:12).
+; Cannot invoke "java.io.File.exists()" because "f" is null
+clj꞉eboshi.core꞉> 
+#'eboshi.core/create!
+clj꞉eboshi.core꞉> 
+; {:runner :mysql, :config {:migrations-dir ./migrations}, :spec {}}
+nil
+clj꞉eboshi.core꞉> 
+; Syntax error compiling at (src/eboshi/core.clj:34:50).
+; Unable to resolve symbol: load-eboshi-config in this context
+clj꞉eboshi.core꞉> 
+:mysql
+clj꞉eboshi.core꞉> 
+::mysql
+clj꞉eboshi.core꞉> 
+#'eboshi.core/init!
+clj꞉eboshi.core꞉> 
+; Syntax error compiling at (src/eboshi/core.clj:36:10).
+; Unable to resolve symbol: config in this context
+clj꞉eboshi.core꞉> 
+; Evaluating file: core.clj
+#'eboshi.core/init!
+clj꞉eboshi.core꞉> 
+; SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+; SLF4J: Defaulting to no-operation (NOP) logger implementation
+; SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+; Execution error (SQLIntegrityConstraintViolationException) at com.mysql.cj.jdbc.exceptions.SQLError/createSQLException (SQLError.java:109).
+; Duplicate entry '1760570677194-CreateItemsTable' for key 'eboshi_migrations.PRIMARY'
+clj꞉eboshi.core꞉> 
+; Execution error (SQLIntegrityConstraintViolationException) at com.mysql.cj.jdbc.exceptions.SQLError/createSQLException (SQLError.java:109).
+; Duplicate entry '1760570677194-CreateItemsTable' for key 'eboshi_migrations.PRIMARY'
+clj꞉eboshi.core꞉> 
+#'eboshi.infra.mysql-migration-runner/make-mysql-migration-runner
+clj꞉eboshi.infra.mysql-migration-runner꞉> 
+; Evaluating file: core.clj
+; 1760570677194-CreateItemsTable
+; 
+; ; clj  eboshi.core 
+; Execution error (SQLIntegrityConstraintViolationException) at com.mysql.cj.jdbc.exceptions.SQLError/createSQLException (SQLError.java:109).
+; Duplicate entry '1760570677194-CreateItemsTable' for key 'eboshi_migrations.PRIMARY'
+; Evaluation of file core.clj failed: class clojure.lang.Compiler$CompilerException
+clj꞉eboshi.core꞉> 
+; Evaluating file: core.clj
+#'eboshi.core/init!
+clj꞉eboshi.core꞉> 
+#'eboshi.infra.mysql-migration-runner/make-mysql-migration-runner
+clj꞉eboshi.infra.mysql-migration-runner꞉> 
+; Evaluating file: core.clj
+#'eboshi.core/init!
+clj꞉eboshi.core꞉> 
+; LAST_MIGRATION 1760570677194-CreateItemsTable
+; Execution error (SQLIntegrityConstraintViolationException) at com.mysql.cj.jdbc.exceptions.SQLError/createSQLException (SQLError.java:109).
+; Duplicate entry '1760570677194-CreateItemsTable' for key 'eboshi_migrations.PRIMARY'
+clj꞉eboshi.core꞉> 
+#'eboshi.services.migrations/get-remaining-migrations-names
+clj꞉eboshi.services.migrations꞉> 
+; Evaluating file: core.clj
+#'eboshi.core/init!
+clj꞉eboshi.core꞉> 
+; LAST_MIGRATION 1760570677194-CreateItemsTable
+; 1760570677194-CreateItemsTable (1760570677194-CreateItemsTable.edn)
+; Execution error (SQLIntegrityConstraintViolationException) at com.mysql.cj.jdbc.exceptions.SQLError/createSQLException (SQLError.java:109).
+; Duplicate entry '1760570677194-CreateItemsTable' for key 'eboshi_migrations.PRIMARY'
+clj꞉eboshi.core꞉> 
+#'eboshi.services.migrations/get-remaining-migrations-names
+clj꞉eboshi.services.migrations꞉> 
+; Evaluating file: core.clj
+#'eboshi.core/init!
+clj꞉eboshi.core꞉> 
+; LAST_MIGRATION 1760570677194-CreateItemsTable
+; Executed 1 migrations:  
+nil
+clj꞉eboshi.core꞉> 
+#'eboshi.core/down!
+clj꞉eboshi.core꞉> 
+#'eboshi.core/down!
+clj꞉eboshi.core꞉> 
+#'eboshi.core/up!
+clj꞉eboshi.core꞉> 
+; LAST_MIGRATION 1760570677194-CreateItemsTable
+; Execution error (FileNotFoundException) at java.io.FileInputStream/open0 (FileInputStream.java:-2).
+; ./migrations/1760570677194-CreateItemsTable (No such file or directory)
+clj꞉eboshi.core꞉> 
+#'eboshi.services.migrations/down!
+clj꞉eboshi.services.migrations꞉> 
+; Evaluating file: core.clj
+#'eboshi.core/init!
+clj꞉eboshi.core꞉> 
+#'eboshi.core/down!
+clj꞉eboshi.core꞉> 
+; LAST_MIGRATION 1760570677194-CreateItemsTable
+; Executed 1 migrations:  1760570677194-CreateItemsTable
+nil
+clj꞉eboshi.core꞉> 
+; LAST_MIGRATION nil
+; Executed 1 migrations:  
+nil
+clj꞉eboshi.core꞉> 
+#'eboshi.core/down!
+clj꞉eboshi.core꞉> 
+; LAST_MIGRATION nil
+; Executed 1 migrations:  
+nil
+clj꞉eboshi.core꞉> 
+; LAST_MIGRATION nil
+; Executed 1 migrations:  1760570677194-CreateItemsTable
+nil
+clj꞉eboshi.core꞉> 
+; LAST_MIGRATION 1760570677194-CreateItemsTable
+; Executed 1 migrations:  1760570677194-CreateItemsTable
+nil
+clj꞉eboshi.core꞉> 
+#'eboshi.core/sync!
 clj꞉eboshi.core꞉> 

@@ -1,0 +1,6 @@
+{:name "1760571747828-CreateStockItemsTable",
+ :up ["create table if not exists stock_items
+       (id int not null primary key auto_increment,
+       item_id int not null,
+       constraint fk_stock_item_item_id foreign key (item_id) references items(id)
+       )"], :down ["drop table stock_items"]}

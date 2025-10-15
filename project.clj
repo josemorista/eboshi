@@ -11,4 +11,5 @@
                                   [org.testcontainers/mysql "1.21.3"]]
                    :source-paths ["src" "test"]}}
   :aliases {"test" ["with-profile" "+dev" "test"]}
+  :main eboshi.core
   :repl-options {:init-ns eboshi.core})

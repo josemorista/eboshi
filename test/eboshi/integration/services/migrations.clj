@@ -18,10 +18,10 @@
                                             (f)
                                             (fs/rm! (:migrations-dir *config*)))))
 
-(deftest create-migration-test
+(deftest create!-migration-test
   (testing "It should create migration file"
     (let [dummy-migration-name (gen/generate gen.migrations/migration-name-gen)]
-      (services.migrations/create *config* dummy-migration-name)
+      (services.migrations/create! *config* dummy-migration-name)
       (let [migrations-dir (:migrations-dir *config*)
             [migration] (fs/ls migrations-dir :short)
             expected-migration-name (cstr/replace migration #"\.edn" "")]

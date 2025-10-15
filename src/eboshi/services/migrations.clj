@@ -24,9 +24,9 @@
                                  (fs/ls :short)
                                  sort)]
     (if (nil? cursor) available-migrations
-        (filter #(> (compare % cursor) 0) available-migrations))))
+        (filter #(> (compare % (str cursor ".edn")) 0) available-migrations))))
 
-(s/defn create [{:keys [migrations-dir]} :- models.migrations/MigrationsConfig migration-name :- s/Str]
+(s/defn create! [{:keys [migrations-dir]} :- models.migrations/MigrationsConfig migration-name :- s/Str]
   (let [migration-name-with-ts (str (-> (Date.) .getTime) "-" migration-name)]
     (-> migrations-dir
         fs/assert-dir!
@@ -45,7 +45,7 @@
   [{migrations-dir :migrations-dir} :- models.migrations/MigrationsConfig
    runner :- protocols.migration-runner/MigrationRunnerProtocol]
   (when-let [cursor (protocols.migration-runner/find-last-migration-name runner)]
-    (->> (make-migration-from-file cursor migrations-dir :down)
+    (->> (make-migration-from-file (str cursor ".edn") migrations-dir :down)
          (protocols.migration-runner/execute! runner))))
 
 (s/defn sync! :- [models.migrations/Migration]

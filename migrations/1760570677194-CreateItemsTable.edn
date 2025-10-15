@@ -1,0 +1,7 @@
+{:name "1760570677194-CreateItemsTable",
+ :up ["create table if not exists items(
+        id int not null primary key auto_increment,
+        name varchar(150) not null,
+        created_at timestamp not null default current_timestamp
+       )"],
+ :down ["drop table items;"]}
