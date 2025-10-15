@@ -1,1 +1,0 @@
-(ns eboshi.infra.cli)

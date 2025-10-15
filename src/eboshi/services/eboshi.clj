@@ -3,20 +3,22 @@
    [schema.core :as s]
    [eboshi.models.eboshi :as models.eboshi]
    [eboshi.logic.migrations :as logic.migrations]
+   [eboshi.logic.eboshi :as logic.eboshi]
    [clojure.edn :as edn]))
 
 (s/defn load-config :- models.eboshi/EboshiConfig
   ([config-file-path :- s/Str]
-   (let [eboshi-config (edn/read-string (slurp config-file-path))
-         spec (logic.migrations/parse-config-options (:spec eboshi-config))
-         config (logic.migrations/make-config (:migrations-dir eboshi-config))]
-     {:runner (:runner eboshi-config) :config config :spec spec}))
+   (let [{:keys [runner migrations-dir spec]} (-> (edn/read-string (slurp config-file-path))
+                                                  logic.eboshi/parse-config)
+         config (logic.migrations/make-config migrations-dir)]
+     {:runner runner :config config :spec spec}))
   ([]
    (load-config "eboshi.edn")))
 
-(s/defn init!
+(s/defn init! :- s/Str
   ([runner :- models.eboshi/Runners
     config-file-path :- s/Str]
-   (spit config-file-path {:runner runner :migrations-dir "./migrations" :spec {}}))
+   (spit config-file-path {:runner runner :migrations-dir "./migrations" :spec {}})
+   config-file-path)
   ([runner :- models.eboshi/Runners]
    (init! runner "eboshi.edn")))

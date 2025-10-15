@@ -6,7 +6,9 @@
   :dependencies [[org.clojure/clojure "1.11.1"]
                  [prismatic/schema "1.4.1"]
                  [com.github.seancorfield/next.jdbc "1.3.1070"]
-                 [com.mysql/mysql-connector-j "9.4.0"]
-                 [org.clojure/test.check "1.1.1"]
-                 [org.testcontainers/mysql "1.21.3"]]
+                 [com.mysql/mysql-connector-j "9.4.0"]]
+  :profiles {:dev {:dependencies [[org.clojure/test.check "1.1.1"]
+                                  [org.testcontainers/mysql "1.21.3"]]
+                   :source-paths ["src" "test"]}}
+  :aliases {"test" ["with-profile" "+dev" "test"]}
   :repl-options {:init-ns eboshi.core})

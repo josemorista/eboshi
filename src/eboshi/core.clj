@@ -1,6 +1,5 @@
-(ns eboshi.core)
+(ns eboshi.core
+  (:require
+   [schema.core :as s]
+   [eboshi.services.eboshi :as services.eboshi :refer [init!]]))
 
-(defn foo
-  "I don't do a whole lot."
-  [x]
-  (println x "Hello, World!"))
