@@ -8,7 +8,8 @@
    [eboshi.services.migrations :as services.migrations]
    [eboshi.logic.migrations :as logic.migrations]
    [eboshi.models.migrations :as models.migrations]
-   [clojure.string :as str]))
+   [clojure.string :as str])
+  (:gen-class))
 
 (s/defn ^:private make-runner :- protocols.migration-runner/MigrationRunnerProtocol
   [runner :- models.eboshi/Runners
