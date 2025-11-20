@@ -11,7 +11,7 @@
    [clojure.string :as str])
   (:gen-class))
 
-(s/defn ^:private make-runner :- protocols.migration-runner/MigrationRunnerProtocol
+(s/defn make-runner :- protocols.migration-runner/MigrationRunnerProtocol
   [runner :- models.eboshi/Runners
    spec]
   (case runner
@@ -75,4 +75,4 @@
     config-file-path :- (s/maybe s/Str)]
    (services.eboshi/init! (keyword runner) config-file-path))
   ([runner :- s/Str]
-   (services.eboshi/init! runner)))
+   (services.eboshi/init! (keyword runner))))

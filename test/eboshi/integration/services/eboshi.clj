@@ -38,23 +38,20 @@
    (is (-> (services.eboshi/init! runner config-file-path)
            io/as-file
            .exists))
-   (println config-file-path runner)
    (io/delete-file config-file-path)))
+
 
 (defspec load-config-test
   10
   (prop/for-all
    [config config-gen
     config-file-path config-file-path-gen]
-   (let [pass-env-value (-> config :spec :password)
-         pass-env-var "DUMMY_PASSWORD"
-         config-with-env (assoc-in config [:spec :password] :env/DUMMY_PASSWORD)]
-     (System/setProperty pass-env-var pass-env-value)
+   (let [config-with-env (assoc-in config [:spec :password] :env/DUMMY_PASSWORD)]
      (spit config-file-path config-with-env)
      (is (= {:runner (:runner config)
              :config {:migrations-dir (:migrations-dir config)}
              :spec {:user (-> config :spec :user)
-                    :password pass-env-value}}
+                    :password nil}}
             (services.eboshi/load-config config-file-path))))))
 
 

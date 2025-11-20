@@ -36,8 +36,8 @@ You can configure this with the setting:
 ;   - See https://calva.io/connect-sequences/
 ; 
 
-; Starting Jack-in: (cd /home/josemorista/Documents/Dev/foss/eboshi; lein update-in :dependencies conj '[nrepl,"1.3.1"]' -- update-in :plugins conj '[cider/cider-nrepl,"0.55.4"]' -- update-in '[:repl-options,:nrepl-middleware]' conj '["cider.nrepl/cider-middleware"]' -- repl :headless)
-; Using host:port 127.0.0.1:44259 ...
+; Starting Jack-in: (cd /home/josemorista/Documents/Dev/foss/eboshi; lein update-in :dependencies conj '[nrepl,"1.5.1"]' -- update-in :plugins conj '[cider/cider-nrepl,"0.58.0"]' -- update-in '[:repl-options,:nrepl-middleware]' conj '["cider.nrepl/cider-middleware"]' -- repl :headless)
+; Using host:port 127.0.0.1:36041 ...
 ; Hooking up nREPL sessions ...
 ; Connected session: clj
 ; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
@@ -48,75 +48,6 @@ about why stdout printed to this file is prepended with `;` to be line comments.
 clj꞉eboshi.core꞉> 
 ; Jack-in done.
 clj꞉eboshi.core꞉> 
-0
-clj꞉eboshi.core꞉> 
-[]
-clj꞉eboshi.core꞉> 
-; Execution error at eboshi.core/eval15853 (REPL:25).
-; Unable to convert: class java.lang.Long to Object[]
-clj꞉eboshi.core꞉> 
-; Execution error (IllegalArgumentException) at eboshi.core/eval15894 (REPL:25).
-; Unrecognized type 1
-clj꞉eboshi.core꞉> 
-; Syntax error (ClassNotFoundException) compiling at (src/eboshi/core.clj:57:17).
-; logic.migrations
-clj꞉eboshi.core꞉> 
-; Evaluating file: core.clj
-; 
-; Syntax error compiling at (src/eboshi/core.clj:31:9).
-; No such var: services.migrations/up!
-; Evaluation of file core.clj failed: class clojure.lang.Compiler$CompilerException
-clj꞉eboshi.core꞉> 
-nil
-clj꞉eboshi.core꞉> 
-; Evaluating file: core.clj
-; 
-; Syntax error compiling at (src/eboshi/core.clj:31:9).
-; No such var: services.migrations/up!
-; Evaluation of file core.clj failed: class clojure.lang.Compiler$CompilerException
-clj꞉eboshi.core꞉> 
-; Evaluating file: migrations.clj
-#'eboshi.services.migrations/sync!
-clj꞉eboshi.services.migrations꞉> 
-; Evaluating file: core.clj
-#'eboshi.core/create!
-clj꞉eboshi.core꞉> 
-; Evaluating file: core.clj
-#'eboshi.core/create!
-clj꞉eboshi.core꞉> 
-#'eboshi.core/create!
-clj꞉eboshi.core꞉> 
-; Syntax error (IllegalStateException) compiling def at (src/eboshi/core.clj:62:1).
-; init! already refers to: #'eboshi.services.eboshi/init! in namespace: eboshi.core
-clj꞉eboshi.core꞉> 
-nil
-clj꞉eboshi.core꞉> 
-; Syntax error (IllegalStateException) compiling def at (src/eboshi/core.clj:62:1).
-; init! already refers to: #'eboshi.services.eboshi/init! in namespace: eboshi.core
-clj꞉eboshi.core꞉> 
-; Syntax error (IllegalStateException) compiling def at (src/eboshi/core.clj:62:1).
-; init! already refers to: #'eboshi.services.eboshi/init! in namespace: eboshi.core
-clj꞉eboshi.core꞉> 
-; Syntax error (IllegalStateException) compiling def at (src/eboshi/core.clj:62:1).
-; init! already refers to: #'eboshi.services.eboshi/init! in namespace: eboshi.core
-clj꞉eboshi.core꞉> 
-nil
-clj꞉eboshi.core꞉> 
-; Syntax error (IllegalStateException) compiling def at (src/eboshi/core.clj:62:1).
-; init! already refers to: #'eboshi.services.eboshi/init! in namespace: eboshi.core
-clj꞉eboshi.core꞉> 
-; Evaluating file: core.clj
-; 
-; Syntax error (IllegalStateException) compiling def at (src/eboshi/core.clj:62:1).
-; init! already refers to: #'eboshi.services.eboshi/init! in namespace: eboshi.core
-; Evaluation of file core.clj failed: class clojure.lang.Compiler$CompilerException
-clj꞉eboshi.core꞉> 
-; Syntax error (IllegalStateException) compiling def at (src/eboshi/core.clj:62:1).
-; init! already refers to: #'eboshi.services.eboshi/init! in namespace: eboshi.core
-clj꞉eboshi.core꞉> 
-; Syntax error (IllegalStateException) compiling def at (src/eboshi/core.clj:62:1).
-; init! already refers to: #'eboshi.services.eboshi/init! in namespace: eboshi.core
-clj꞉eboshi.core꞉> 
 ; nREPL Connection was closed
 ; Jacking in...
 ; Connecting using "Leiningen" project type.
@@ -124,8 +55,8 @@ clj꞉eboshi.core꞉> 
 ;   - See https://calva.io/connect-sequences/
 ; 
 
-; Starting Jack-in: (cd /home/josemorista/Documents/Dev/foss/eboshi; lein update-in :dependencies conj '[nrepl,"1.3.1"]' -- update-in :plugins conj '[cider/cider-nrepl,"0.55.4"]' -- update-in '[:repl-options,:nrepl-middleware]' conj '["cider.nrepl/cider-middleware"]' -- repl :headless)
-; Using host:port 127.0.0.1:34227 ...
+; Starting Jack-in: (cd /home/josemorista/Documents/Dev/foss/eboshi; lein update-in :dependencies conj '[nrepl,"1.5.1"]' -- update-in :plugins conj '[cider/cider-nrepl,"0.58.0"]' -- update-in '[:repl-options,:nrepl-middleware]' conj '["cider.nrepl/cider-middleware"]' -- with-profile +dev repl :headless)
+; Using host:port 127.0.0.1:41247 ...
 ; Hooking up nREPL sessions ...
 ; Connected session: clj
 ; Evaluating code from settings: 'calva.autoEvaluateCode.onConnect.clj'
@@ -133,148 +64,38 @@ nil
 clj꞉eboshi.core꞉> 
 ; Jack-in done.
 clj꞉eboshi.core꞉> 
-; Syntax error compiling at (src/eboshi/core.clj:62:35).
-; Unable to resolve symbol: make-eboshi-config in this context
-clj꞉eboshi.core꞉> 
-; Evaluating file: core.clj
-#'eboshi.core/init!
-clj꞉eboshi.core꞉> 
-#'eboshi.core/create!
-clj꞉eboshi.core꞉> 
-; Execution error (NullPointerException) at eboshi.logic.fs/eval4862$is-dir?$fn (fs.clj:12).
-; Cannot invoke "java.io.File.exists()" because "f" is null
-clj꞉eboshi.core꞉> 
-#'eboshi.core/create!
-clj꞉eboshi.core꞉> 
-; {:migrations-dir nil} CreateItemsTable
-; Execution error (NullPointerException) at eboshi.logic.fs/eval4862$is-dir?$fn (fs.clj:12).
-; Cannot invoke "java.io.File.exists()" because "f" is null
-clj꞉eboshi.core꞉> 
-; Syntax error compiling at (src/eboshi/core.clj:62:35).
-; Unable to resolve symbol: config-file-path in this context
-clj꞉eboshi.core꞉> 
-{:runner ":mysql", :config {:migrations-dir "./migrations"}, :spec {}}
-clj꞉eboshi.core꞉> 
-#'eboshi.core/create!
-clj꞉eboshi.core꞉> 
-; nil
-; Execution error (NullPointerException) at eboshi.logic.fs/eval4862$is-dir?$fn (fs.clj:12).
-; Cannot invoke "java.io.File.exists()" because "f" is null
-clj꞉eboshi.core꞉> 
-#'eboshi.core/create!
-clj꞉eboshi.core꞉> 
-; {:runner :mysql, :config {:migrations-dir ./migrations}, :spec {}}
-; Execution error (NullPointerException) at eboshi.logic.fs/eval4862$is-dir?$fn (fs.clj:12).
-; Cannot invoke "java.io.File.exists()" because "f" is null
-clj꞉eboshi.core꞉> 
-#'eboshi.core/create!
-clj꞉eboshi.core꞉> 
-; {:runner :mysql, :config {:migrations-dir ./migrations}, :spec {}}
 nil
-clj꞉eboshi.core꞉> 
-; Syntax error compiling at (src/eboshi/core.clj:34:50).
-; Unable to resolve symbol: load-eboshi-config in this context
-clj꞉eboshi.core꞉> 
-:mysql
-clj꞉eboshi.core꞉> 
-::mysql
-clj꞉eboshi.core꞉> 
-#'eboshi.core/init!
-clj꞉eboshi.core꞉> 
-; Syntax error compiling at (src/eboshi/core.clj:36:10).
-; Unable to resolve symbol: config in this context
-clj꞉eboshi.core꞉> 
-; Evaluating file: core.clj
-#'eboshi.core/init!
-clj꞉eboshi.core꞉> 
-; SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
-; SLF4J: Defaulting to no-operation (NOP) logger implementation
-; SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-; Execution error (SQLIntegrityConstraintViolationException) at com.mysql.cj.jdbc.exceptions.SQLError/createSQLException (SQLError.java:109).
-; Duplicate entry '1760570677194-CreateItemsTable' for key 'eboshi_migrations.PRIMARY'
-clj꞉eboshi.core꞉> 
-; Execution error (SQLIntegrityConstraintViolationException) at com.mysql.cj.jdbc.exceptions.SQLError/createSQLException (SQLError.java:109).
-; Duplicate entry '1760570677194-CreateItemsTable' for key 'eboshi_migrations.PRIMARY'
-clj꞉eboshi.core꞉> 
-#'eboshi.infra.mysql-migration-runner/make-mysql-migration-runner
-clj꞉eboshi.infra.mysql-migration-runner꞉> 
-; Evaluating file: core.clj
-; 1760570677194-CreateItemsTable
-; 
-; ; clj  eboshi.core 
-; Execution error (SQLIntegrityConstraintViolationException) at com.mysql.cj.jdbc.exceptions.SQLError/createSQLException (SQLError.java:109).
-; Duplicate entry '1760570677194-CreateItemsTable' for key 'eboshi_migrations.PRIMARY'
-; Evaluation of file core.clj failed: class clojure.lang.Compiler$CompilerException
-clj꞉eboshi.core꞉> 
-; Evaluating file: core.clj
-#'eboshi.core/init!
-clj꞉eboshi.core꞉> 
-#'eboshi.infra.mysql-migration-runner/make-mysql-migration-runner
-clj꞉eboshi.infra.mysql-migration-runner꞉> 
-; Evaluating file: core.clj
-#'eboshi.core/init!
-clj꞉eboshi.core꞉> 
-; LAST_MIGRATION 1760570677194-CreateItemsTable
-; Execution error (SQLIntegrityConstraintViolationException) at com.mysql.cj.jdbc.exceptions.SQLError/createSQLException (SQLError.java:109).
-; Duplicate entry '1760570677194-CreateItemsTable' for key 'eboshi_migrations.PRIMARY'
-clj꞉eboshi.core꞉> 
-#'eboshi.services.migrations/get-remaining-migrations-names
-clj꞉eboshi.services.migrations꞉> 
-; Evaluating file: core.clj
-#'eboshi.core/init!
-clj꞉eboshi.core꞉> 
-; LAST_MIGRATION 1760570677194-CreateItemsTable
-; 1760570677194-CreateItemsTable (1760570677194-CreateItemsTable.edn)
-; Execution error (SQLIntegrityConstraintViolationException) at com.mysql.cj.jdbc.exceptions.SQLError/createSQLException (SQLError.java:109).
-; Duplicate entry '1760570677194-CreateItemsTable' for key 'eboshi_migrations.PRIMARY'
-clj꞉eboshi.core꞉> 
-#'eboshi.services.migrations/get-remaining-migrations-names
-clj꞉eboshi.services.migrations꞉> 
-; Evaluating file: core.clj
-#'eboshi.core/init!
-clj꞉eboshi.core꞉> 
-; LAST_MIGRATION 1760570677194-CreateItemsTable
-; Executed 1 migrations:  
-nil
-clj꞉eboshi.core꞉> 
-#'eboshi.core/down!
-clj꞉eboshi.core꞉> 
-#'eboshi.core/down!
-clj꞉eboshi.core꞉> 
-#'eboshi.core/up!
-clj꞉eboshi.core꞉> 
-; LAST_MIGRATION 1760570677194-CreateItemsTable
-; Execution error (FileNotFoundException) at java.io.FileInputStream/open0 (FileInputStream.java:-2).
-; ./migrations/1760570677194-CreateItemsTable (No such file or directory)
-clj꞉eboshi.core꞉> 
-#'eboshi.services.migrations/down!
-clj꞉eboshi.services.migrations꞉> 
-; Evaluating file: core.clj
-#'eboshi.core/init!
-clj꞉eboshi.core꞉> 
-#'eboshi.core/down!
-clj꞉eboshi.core꞉> 
-; LAST_MIGRATION 1760570677194-CreateItemsTable
-; Executed 1 migrations:  1760570677194-CreateItemsTable
-nil
-clj꞉eboshi.core꞉> 
-; LAST_MIGRATION nil
-; Executed 1 migrations:  
-nil
-clj꞉eboshi.core꞉> 
-#'eboshi.core/down!
-clj꞉eboshi.core꞉> 
-; LAST_MIGRATION nil
-; Executed 1 migrations:  
-nil
-clj꞉eboshi.core꞉> 
-; LAST_MIGRATION nil
-; Executed 1 migrations:  1760570677194-CreateItemsTable
-nil
-clj꞉eboshi.core꞉> 
-; LAST_MIGRATION 1760570677194-CreateItemsTable
-; Executed 1 migrations:  1760570677194-CreateItemsTable
-nil
-clj꞉eboshi.core꞉> 
-#'eboshi.core/sync!
-clj꞉eboshi.core꞉> 
+clj꞉eboshi.integration.services.mysql-migrations꞉> 
+; Evaluating file: mysql_migrations.clj
+#'eboshi.integration.services.mysql-migrations/down-migration-test
+clj꞉eboshi.integration.services.mysql-migrations꞉> 
+#'eboshi.integration.services.mysql-migrations/down-migration-test
+clj꞉eboshi.integration.services.mysql-migrations꞉> 
+; Running test: down-migration-test…
+{:migrations-dir "/tmp/70929b36-fb50-4983-83de-a450fe9bae3a"}
+clj꞉eboshi.integration.services.mysql-migrations꞉> 
+; ERROR in eboshi.integration.services.mysql-migrations/down-migration-test (FileInputStream.java:91):
+; Uncaught exception, not in assertion
+; error: java.io.FileNotFoundException: /tmp/70929b36-fb50-4983-83de-a450fe9bae3a/2Createt_2Table.edn (No such file or directory) (FileInputStream.java:91)
+; 1 tests finished, problems found. 😭 errors: 1, failures: 0, ns: 1, vars: 1
+clj꞉eboshi.integration.services.mysql-migrations꞉> 
+; Syntax error compiling at (test/eboshi/integration/services/mysql_migrations.clj:27:52).
+; Unable to resolve symbol: migration in this context
+clj꞉eboshi.integration.services.mysql-migrations꞉> 
+#'eboshi.integration.services.mysql-migrations/write-dummy-migrations
+clj꞉eboshi.integration.services.mysql-migrations꞉> 
+#'eboshi.integration.services.mysql-migrations/down-migration-test
+clj꞉eboshi.integration.services.mysql-migrations꞉> 
+; Running test: down-migration-test…
+; ERROR in eboshi.integration.services.mysql-migrations/down-migration-test (PersistentHashMap.java:88):
+; Uncaught exception, not in assertion
+; error: java.lang.IllegalArgumentException: No value supplied for key: .edn (PersistentHashMap.java:88)
+; 1 tests finished, problems found. 😭 errors: 1, failures: 0, ns: 1, vars: 1
+clj꞉eboshi.integration.services.mysql-migrations꞉> 
+#'eboshi.integration.services.mysql-migrations/write-dummy-migrations
+clj꞉eboshi.integration.services.mysql-migrations꞉> 
+#'eboshi.integration.services.mysql-migrations/down-migration-test
+clj꞉eboshi.integration.services.mysql-migrations꞉> 
+; Running test: down-migration-test…
+; 3 tests finished, all passing 👍, ns: 1, vars: 1
+clj꞉eboshi.integration.services.mysql-migrations꞉> 

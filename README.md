@@ -60,6 +60,47 @@ Create and use the MySQL migration runner:
 (migrations/down! config runner)
 ```
 
+## Using eboshi from a config file (core namespace)
+
+You can drive eboshi directly from a configuration EDN file by calling the functions in the `eboshi.core` namespace. This is useful when running from a REPL, embedding eboshi in scripts, or invoking it from other tooling.
+
+Example config file (`eboshi.edn`):
+
+```edn
+{:runner :mysql
+ :spec   "jdbc:mysql://localhost:3306/eboshi?useSSL=false&serverTimezone=UTC&user=root&password=secret"
+ :config {:migrations-dir "./migrations"}}
+```
+
+Notes:
+- `:runner` should match a supported runner keyword (for example `:mysql`).
+- `:spec` can be a JDBC URL string or a map, depending on your runner implementation.
+- `:config` should include `:migrations-dir` pointing to your migrations folder.
+
+Call from a REPL:
+
+```clojure
+(require '[eboshi.core :as eboshi.core])
+
+;; apply next pending migration using the config file
+(eboshi.core/up!)
+
+;; apply all pending migrations
+(eboshi.core/sync!)
+
+;; revert last migration
+(eboshi.core/down!)
+
+;; create a new migration file (writes into :migrations-dir defined in the config)
+(eboshi.core/create! "add-users")
+```
+
+Default config behavior:
+- If you omit the `config-file-path`, the core functions call the library's default config loader (see `eboshi.services.eboshi/load-config`). Pass a path when you need to use a specific EDN file.
+
+Examples in scripts:
+- From a script or automation that can run Clojure code, require `eboshi.core` and call the desired function with the path to your EDN config file.
+
 ## Developer notes
 
 ### Running tests

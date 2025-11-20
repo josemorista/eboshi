@@ -10,7 +10,7 @@
   (->> runner-spec
        (mapv (fn [[key val]]
                (cond
-                 (env-config-value? val) [key (System/getProperty (name val))]
+                 (env-config-value? val) [key (System/getenv (name val))]
                  (map? val) [key (parse-config val)]
                  :else [key val])))
        (into {})))

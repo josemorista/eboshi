@@ -24,7 +24,7 @@
 ; Helper fns
 (defn write-dummy-migrations []
   (doseq [migration dummy-migrations]
-    (spit (fs/join-path (:migrations-dir *config*) (:name migration)) migration)))
+    (spit (fs/join-path (:migrations-dir *config*) (str (:name migration) ".edn")) migration)))
 
 (defn check-if-table-exists
   [con table-name]
@@ -93,4 +93,3 @@
       (is (check-if-table-exists con "t_1"))
       (services.migrations/down! *config* *runner*)
       (is (false? (check-if-table-exists con "t_1"))))))
-
