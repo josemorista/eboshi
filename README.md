@@ -1,6 +1,7 @@
 # eboshi
 
-Eboshi is a lightweight Clojure library for managing SQL migrations stored as EDN files and executing them against a relational database. The project provides a migration-runner protocol and a MySQL implementation using next.jdbc.
+Eboshi is a lightweight Clojure library for managing SQL migrations stored as EDN files and executing them against a relational database. 
+The project provides a migration-runner protocol and a MySQL implementation using next.jdbc.
 
 ## Key concepts
 
