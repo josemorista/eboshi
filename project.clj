@@ -1,4 +1,4 @@
-(defproject org.clojars.josemorista/eboshi "0.3.4-SNAPSHOT"
+(defproject org.clojars.josemorista/eboshi "0.4.0-SNAPSHOT"
   :description "Eboshi is a lightweight Clojure library for managing SQL migrations stored as EDN files and 
                 executing them against a relational database. The project provides a migration-runner protocol and a MySQL implementation using next.jdbc."
   :url "https://github.com/josemorista/eboshi"
