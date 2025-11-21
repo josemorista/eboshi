@@ -16,9 +16,10 @@ jobs:
   create-release:
     runs-on: ubuntu-latest
     steps:
-      - name: Set GPG
+      - name: Setup GPG # Obtained by gpg --gen-key and gpg --export-secret-keys -a <key-id>
         run: |
           sudo apt install -y gnupg
+          echo -e "${{ secrets.GPG_PRIVATE_KEY }}" | gpg --batch --import
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
@@ -37,8 +38,10 @@ jobs:
         run: lein -v
       - name: Set Git config
         run: |
+          git config user.signingkey ${{secrets.GPG_KEY_ID}}
           git config user.name jm-bot
           git config user.email josemorista@gmail.com
+          git config commit.gpgsign true
       - name: Bump version
         run: |
           lein change version leiningen.release/bump-version ${{ inputs.bump_type }}
