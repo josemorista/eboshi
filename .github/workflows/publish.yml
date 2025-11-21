@@ -3,7 +3,7 @@ name: publish
 on:
   push:
     tags:
-      - 'Version *'
+      - '*-SNAPSHOT'
 
 jobs:
   publish:
@@ -12,6 +12,10 @@ jobs:
       CLOJARS_TOKEN: ${{secrets.CLOJARS_TOKEN}}
     runs-on: ubuntu-latest
     steps:
+      - name: Setup GPG # Obtained by gpg --gen-key and gpg --export-secret-keys -a <key-id>
+        run: |
+          sudo apt install -y gnupg
+          echo -e "${{ secrets.GPG_PRIVATE_KEY }}" | gpg --batch --import
       - name: Checkout repository
         uses: actions/checkout@v4
       - name: Prepare java
