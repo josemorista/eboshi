@@ -2,10 +2,10 @@
   :description "Eboshi is a lightweight Clojure library for managing SQL migrations stored as EDN files and 
                 executing them against a relational database. The project provides a migration-runner protocol and a MySQL implementation using next.jdbc."
   :url "https://github.com/josemorista/eboshi"
-  :sign-releases false
   :release-tasks [["change" "version" "leiningen.release/bump-version" "release"]
                   ["vcs" "commit"]
                   ["vcs" "tag"]]
+  :repositories [["releases" {:sign-releases false}]]
   :deploy-repositories {"clojars" {:sign-releases false
                                    :username :env/CLOJARS_USERNAME
                                    :password :env/CLOJARS_TOKEN}}
