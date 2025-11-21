@@ -37,9 +37,10 @@ jobs:
           git config user.name jm-bot
           git config user.email josemorista@gmail.com
       - name: Bump version
-        run: lein change version leiningen.release/bump-version ${{ inputs.bump_type }}
+        run: |
+          lein change version leiningen.release/bump-version ${{ inputs.bump_type }}
+          lein vcs commit
       - name: Push changes to GitHub
         run: |
-          git add --all
           git push
           git push --tags
