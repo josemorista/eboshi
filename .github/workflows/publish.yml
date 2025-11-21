@@ -1,4 +1,4 @@
-name: create-release
+name: publish
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - 'Version *'
 
 jobs:
-  create-release:
+  publish:
     env:
       CLOJARS_USERANME: josemorista
       CLOJARS_TOKEN: ${{secrets.CLOJARS_TOKEN}}
