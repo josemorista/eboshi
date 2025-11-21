@@ -5,7 +5,8 @@
   :release-tasks [["change" "version" "leiningen.release/bump-version" "release"]
                   ["vcs" "commit"]
                   ["vcs" "tag"]]
-  :repositories [["releases" {:sign-releases false}]]
+  :repositories [["releases" {:url "https://github.com/josemorista/eboshi"
+                              :sign-releases false}]]
   :deploy-repositories {"clojars" {:sign-releases false
                                    :username :env/CLOJARS_USERNAME
                                    :password :env/CLOJARS_TOKEN}}
