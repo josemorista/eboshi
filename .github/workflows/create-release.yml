@@ -18,7 +18,7 @@ jobs:
     steps:
       - name: Set GPG
         run: |
-          apt-get install gnupg
+          apt install -y gnupg
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
