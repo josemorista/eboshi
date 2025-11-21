@@ -1,3 +1,7 @@
+
+[![Clojars Project](https://img.shields.io/clojars/v/org.clojars.josemorista/eboshi.svg)](https://clojars.org/org.clojars.josemorista/eboshi)
+
+
 # eboshi
 
 Eboshi is a lightweight Clojure library for managing SQL migrations stored as EDN files and executing them against a relational database. 

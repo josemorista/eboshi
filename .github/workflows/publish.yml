@@ -31,4 +31,4 @@ jobs:
       - name: Get leiningen version
         run: lein -v
       - name: Publish to clojars
-        run: lein deploy clojars
+        run: lein deploy:clojars
