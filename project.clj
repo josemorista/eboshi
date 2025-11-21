@@ -5,10 +5,7 @@
   :release-tasks [["change" "version" "leiningen.release/bump-version" "release"]
                   ["vcs" "commit"]
                   ["vcs" "tag"]]
-  :repositories [["releases" {:url "https://github.com/josemorista/eboshi"
-                              :sign-releases false}]]
-  :deploy-repositories {"clojars" {:sign-releases false
-                                   :username :env/CLOJARS_USERNAME
+  :deploy-repositories {"clojars" {:username :env/CLOJARS_USERNAME
                                    :password :env/CLOJARS_TOKEN}}
   :license {:name "EPL-2.0 OR GPL-2.0-or-later WITH Classpath-exception-2.0"
             :url "https://www.eclipse.org/legal/epl-2.0/"}
