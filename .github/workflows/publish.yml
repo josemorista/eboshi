@@ -1,0 +1,30 @@
+name: create-release
+
+on:
+  push:
+    tags:
+      - 'Version *'
+
+jobs:
+  create-release:
+    env:
+      CLOJARS_USERANME: josemorista
+      CLOJARS_TOKEN: ${{secrets.CLOJARS_TOKEN}}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Prepare java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin' # See 'Supported distributions' for available options
+          java-version: '21'
+      - name: Install clojure tools
+        uses: DeLaGuardo/setup-clojure@13.4
+        with:
+          cli: 'latest' # Clojure CLI based on tools.deps
+          lein: 'latest' # Leiningen
+      - name: Get leiningen version
+        run: lein -v
+      - name: Publish to clojars
+        run: lein deploy clojars

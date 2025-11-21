@@ -43,6 +43,7 @@ jobs:
         run: |
           lein change version leiningen.release/bump-version ${{ inputs.bump_type }}
           lein vcs commit
+          lein vcs tag
       - name: Push changes to GitHub
         run: |
           git push
