@@ -5,6 +5,7 @@
    [eboshi.models.eboshi :as models.eboshi]
    [eboshi.protocols.migration-runner :as protocols.migration-runner]
    [eboshi.infra.mysql-migration-runner :as runners.mysql]
+   [eboshi.infra.postgres-migration-runner :as runners.postgres]
    [eboshi.services.migrations :as services.migrations]
    [eboshi.logic.migrations :as logic.migrations]
    [eboshi.models.migrations :as models.migrations]
@@ -16,6 +17,7 @@
    spec]
   (case runner
     :mysql (runners.mysql/make-mysql-migration-runner spec)
+    :postgres (runners.postgres/make-postgres-migration-runner spec)
     "default" (ex-info "Runner not available" {:runner runner})))
 
 (s/defn ^:private load-eboshi-config

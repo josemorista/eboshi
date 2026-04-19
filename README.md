@@ -1,11 +1,9 @@
-
 [![Clojars Project](https://img.shields.io/clojars/v/org.clojars.josemorista/eboshi.svg)](https://clojars.org/org.clojars.josemorista/eboshi)
-
 
 # eboshi
 
-Eboshi is a lightweight Clojure library for managing SQL migrations stored as EDN files and executing them against a relational database. 
-The project provides a migration-runner protocol and a MySQL implementation using next.jdbc.
+Eboshi is a lightweight Clojure library for managing SQL migrations stored as EDN files and executing them against a relational database.
+The project provides a migration-runner protocol with MySQL and Postgres implementations using next.jdbc.
 
 ## Key concepts
 
@@ -27,11 +25,12 @@ The project provides a migration-runner protocol and a MySQL implementation usin
 - `src/eboshi/services/migrations.clj` — high-level migration helpers (create, up!, down!, sync!)
 - `src/eboshi/protocols/migration_runner.clj` — `s/defprotocol` for migration runners (Schema is used for runtime validation)
 - `src/eboshi/infra/mysql_migration_runner.clj` — MySQL runner implementation using `next.jdbc`
-- `test/...` — unit and integration tests. Integration tests use Testcontainers' `MySQLContainer` and require Docker.
+- `src/eboshi/infra/postgres_migration_runner.clj` — Postgres runner implementation using `next.jdbc`
+- `test/...` — unit and integration tests. Integration tests use Testcontainers (`MySQLContainer` and `PostgreSQLContainer`) and require Docker.
 
 ## Usage examples
 
-Create a database spec for a local MySQL instance (ensure MySQL driver is in your deps):
+Create a database spec for a local MySQL or Postgres instance (ensure the matching JDBC driver is in your deps):
 
 ```clojure
 ;; URL string form
@@ -43,13 +42,15 @@ Create a database spec for a local MySQL instance (ensure MySQL driver is in you
 							:password "secret"})
 ```
 
-Create and use the MySQL migration runner:
+Create and use a migration runner:
 
 ```clojure
 (require '[eboshi.infra.mysql-migration-runner :as mysql-runner]
+         '[eboshi.infra.postgres-migration-runner :as postgres-runner]
 				 '[eboshi.services.migrations :as migrations])
 
 (def runner (mysql-runner/make-mysql-migration-runner db-spec))
+;; or (def runner (postgres-runner/make-postgres-migration-runner db-spec))
 (def config {:migrations-dir "/path/to/migrations"})
 
 ;; write a migration (helper provided by the library)
@@ -78,7 +79,8 @@ Example config file (`eboshi.edn`):
 ```
 
 Notes:
-- `:runner` should match a supported runner keyword (for example `:mysql`).
+
+- `:runner` should match a supported runner keyword (for example `:mysql` or `:postgres`).
 - `:spec` can be a JDBC URL string or a map, depending on your runner implementation.
 - `:config` should include `:migrations-dir` pointing to your migrations folder.
 
@@ -101,9 +103,11 @@ Call from a REPL:
 ```
 
 Default config behavior:
+
 - If you omit the `config-file-path`, the core functions call the library's default config loader (see `eboshi.services.eboshi/load-config`). Pass a path when you need to use a specific EDN file.
 
 Examples in scripts:
+
 - From a script or automation that can run Clojure code, require `eboshi.core` and call the desired function with the path to your EDN config file.
 
 ## Developer notes

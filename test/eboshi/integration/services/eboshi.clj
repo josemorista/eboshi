@@ -1,5 +1,5 @@
 (ns eboshi.integration.services.eboshi
-  (:require [clojure.test :refer :all]
+  (:require [clojure.test :refer [is use-fixtures]]
             [schema.test :as st]
             [eboshi.services.eboshi :as services.eboshi]
             [clojure.test.check.generators :as gen]
@@ -7,7 +7,7 @@
             [clojure.test.check.clojure-test :refer [defspec]]
             [clojure.java.io :as io]))
 
-(def runners-gen (gen/elements [:mysql]))
+(def runners-gen (gen/elements [:mysql :postgres]))
 
 (def config-file-path-gen (gen/fmap
                            (fn [filename]

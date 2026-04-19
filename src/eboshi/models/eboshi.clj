@@ -3,7 +3,7 @@
    [schema.core :as s]
    [eboshi.models.migrations :as models.migrations]))
 
-(s/defschema Runners (s/enum :mysql))
+(s/defschema Runners (s/enum :mysql :postgres))
 
 (s/defschema EboshiConfig
   {:config models.migrations/MigrationsConfig

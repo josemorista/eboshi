@@ -1,6 +1,6 @@
 (defproject org.clojars.josemorista/eboshi "0.4.0-SNAPSHOT"
-  :description "Eboshi is a lightweight Clojure library for managing SQL migrations stored as EDN files and 
-                executing them against a relational database. The project provides a migration-runner protocol and a MySQL implementation using next.jdbc."
+  :description "Eboshi is a lightweight Clojure library for managing SQL migrations stored as EDN files and
+                executing them against a relational database. The project provides a migration-runner protocol with MySQL and Postgres implementations using next.jdbc."
   :url "https://github.com/josemorista/eboshi"
   :deploy-repositories {"clojars" {:username :env/CLOJARS_USERNAME
                                    :password :env/CLOJARS_TOKEN}}
@@ -9,9 +9,11 @@
   :dependencies [[org.clojure/clojure "1.11.1"]
                  [prismatic/schema "1.4.1"]
                  [com.github.seancorfield/next.jdbc "1.3.1070"]
-                 [com.mysql/mysql-connector-j "9.4.0"]]
+                 [com.mysql/mysql-connector-j "9.4.0"]
+                 [org.postgresql/postgresql "42.7.8"]]
   :profiles {:dev {:dependencies [[org.clojure/test.check "1.1.1"]
-                                  [org.testcontainers/mysql "1.21.3"]]
+                                  [org.testcontainers/mysql "1.21.3"]
+                                  [org.testcontainers/postgresql "1.21.3"]]
                    :source-paths ["src" "test"]}
              :uberjar {:aot [:all]}}
   :aliases {"test" ["with-profile" "+dev" "test"]
