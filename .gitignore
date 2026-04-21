@@ -15,3 +15,4 @@ pom.xml.asc
 .clj-kondo
 eboshi.edn
 migrations
+.lsp
