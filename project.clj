@@ -10,11 +10,13 @@
                  [prismatic/schema "1.4.1"]
                  [com.github.seancorfield/next.jdbc "1.3.1070"]
                  [com.mysql/mysql-connector-j "9.4.0"]
+                 [org.slf4j/slf4j-simple "2.0.10"]
                  [org.postgresql/postgresql "42.7.8"]]
   :profiles {:dev {:dependencies [[org.clojure/test.check "1.1.1"]
-                                  [org.testcontainers/mysql "1.21.3"]
-                                  [org.testcontainers/postgresql "1.21.3"]
-                                  [org.apache.commons/commons-compress "1.26.0"]]
+                                  [org.testcontainers/mysql "1.21.4"]
+                                  [org.testcontainers/testcontainers "1.21.4"]
+                                  [org.testcontainers/postgresql "1.21.4"]
+                                  [org.apache.commons/commons-compress "1.28.0"]]
                    :source-paths ["src" "test"]}
              :uberjar {:aot [:all]}}
   :aliases {"test" ["with-profile" "+dev" "test"]

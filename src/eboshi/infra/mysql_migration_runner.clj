@@ -17,6 +17,10 @@
                 (partial con)
                 (apply args))) funcs)))
 
+(defn ^:private ->sql-timestamp
+  [created-at]
+  (java.sql.Timestamp. (.getTime ^java.util.Date created-at)))
+
 (s/defn ^:private find-last-migration-name :- (s/maybe s/Str)
   [con]
   (some-> (jdbc/execute-one! con ["select name from eboshi_migrations order by name desc limit 1;"])
@@ -30,7 +34,7 @@
     (case (:type migration)
       :up (sql/insert! tx :eboshi_migrations
                        {:name (:name migration)
-                        :created_at (java.util.Date/from (:created-at migration))})
+                        :created_at (->sql-timestamp (:created-at migration))})
       :down (sql/delete! con :eboshi_migrations {:name (:name migration)}))))
 
 (s/defn make-mysql-migration-runner

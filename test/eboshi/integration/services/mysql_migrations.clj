@@ -67,10 +67,11 @@
   (testing "It should run up migrations in order"
     (write-dummy-migrations)
     (with-open [con (jdbc/get-connection *db-spec*)]
-      (let [{:keys [name type instructions]} (services.migrations/up! *config* *runner*)]
+      (let [{:keys [name type instructions created-at]} (services.migrations/up! *config* *runner*)]
         (is (= name (-> dummy-migrations first :name)))
         (is (= type :up))
         (is (= instructions (-> dummy-migrations first :up)))
+        (is (instance? java.util.Date created-at))
         (is (check-if-table-exists con "t_1"))
         (is (not (check-if-table-exists con "t_2"))))
 
