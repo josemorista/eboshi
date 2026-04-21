@@ -13,7 +13,8 @@
                  [org.postgresql/postgresql "42.7.8"]]
   :profiles {:dev {:dependencies [[org.clojure/test.check "1.1.1"]
                                   [org.testcontainers/mysql "1.21.3"]
-                                  [org.testcontainers/postgresql "1.21.3"]]
+                                  [org.testcontainers/postgresql "1.21.3"]
+                                  [org.apache.commons/commons-compress "1.26.0"]]
                    :source-paths ["src" "test"]}
              :uberjar {:aot [:all]}}
   :aliases {"test" ["with-profile" "+dev" "test"]

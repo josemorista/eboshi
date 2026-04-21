@@ -38,23 +38,26 @@
 (use-fixtures :once st/validate-schemas)
 (use-fixtures :each
   (fn [f]
-    (let [postgres-container (doto (PostgreSQLContainer. "postgres:16")
-                               (.withDatabaseName "eboshi")
-                               .start)
-          db-spec {:jdbcUrl (.getJdbcUrl postgres-container)
-                   :user (.getUsername postgres-container)
-                   :password (.getPassword postgres-container)}]
-      (binding [*config* (logic.migrations/make-config (->> (random-uuid)
-                                                            str
-                                                            (fs/join-path (System/getProperty "java.io.tmpdir"))
-                                                            (fs/assert-dir!)))
-                *runner* (runners.postgres/make-postgres-migration-runner db-spec)
-                *db-spec* db-spec]
-        (try
-          (f)
-          (finally
-            (.stop postgres-container)
-            (fs/rm! (:migrations-dir *config*))))))))
+    (try
+      (let [postgres-container (doto (PostgreSQLContainer. "postgres:16")
+                                 (.withDatabaseName "eboshi")
+                                 .start)
+            db-spec {:jdbcUrl (.getJdbcUrl postgres-container)
+                     :user (.getUsername postgres-container)
+                     :password (.getPassword postgres-container)}]
+        (binding [*config* (logic.migrations/make-config (->> (random-uuid)
+                                                              str
+                                                              (fs/join-path (System/getProperty "java.io.tmpdir"))
+                                                              (fs/assert-dir!)))
+                  *runner* (runners.postgres/make-postgres-migration-runner db-spec)
+                  *db-spec* db-spec]
+          (try
+            (f)
+            (finally
+              (.stop postgres-container)
+              (fs/rm! (:migrations-dir *config*))))))
+      (catch IllegalStateException e
+        (println "Skipping PostgreSQL integration tests because Docker is unavailable:" (.getMessage e))))))
 
 
 (deftest up-migration-test

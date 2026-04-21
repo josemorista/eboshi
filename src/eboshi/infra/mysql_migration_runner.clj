@@ -30,7 +30,7 @@
     (case (:type migration)
       :up (sql/insert! tx :eboshi_migrations
                        {:name (:name migration)
-                        :created_at (:created-at migration)})
+                        :created_at (java.util.Date/from (:created-at migration))})
       :down (sql/delete! con :eboshi_migrations {:name (:name migration)}))))
 
 (s/defn make-mysql-migration-runner

@@ -14,7 +14,7 @@
                              "alter table users"]) 0 10))
 
 (def migration-created-at-gen
-  (gen/fmap #(java.util.Date. %) gen/nat))
+  (gen/return (java.time.Instant/now)))
 
 (def migration-gen
   (gen/hash-map

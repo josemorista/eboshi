@@ -1,5 +1,5 @@
 (ns eboshi.integration.services.mysql-migrations
-  (:require [clojure.test :refer :all]
+  (:require [clojure.test :refer [deftest is testing use-fixtures]]
             [schema.test :as st]
             [eboshi.services.migrations :as services.migrations]
             [eboshi.logic.migrations :as logic.migrations]
@@ -37,24 +37,27 @@
 (use-fixtures :once st/validate-schemas)
 (use-fixtures :each
   (fn [f]
-    (let [mysql-container (doto (MySQLContainer. "mysql:lts")
-                            (.withDatabaseName "eboshi")
-                            .start)
-          db-spec {:jdbcUrl (.getJdbcUrl mysql-container)
-                   :user (.getUsername mysql-container)
-                   :password (.getPassword mysql-container)
-                   :dbname "eboshi"}]
-      (binding [*config* (logic.migrations/make-config (->> (random-uuid)
-                                                            str
-                                                            (fs/join-path (System/getProperty "java.io.tmpdir"))
-                                                            (fs/assert-dir!)))
-                *runner* (runners.mysql/make-mysql-migration-runner db-spec)
-                *db-spec* db-spec]
-        (try
-          (f)
-          (finally
-            (.stop mysql-container)
-            (fs/rm! (:migrations-dir *config*))))))))
+    (try
+      (let [mysql-container (doto (MySQLContainer. "mysql:lts")
+                              (.withDatabaseName "eboshi")
+                              .start)
+            db-spec {:jdbcUrl (.getJdbcUrl mysql-container)
+                     :user (.getUsername mysql-container)
+                     :password (.getPassword mysql-container)
+                     :dbname "eboshi"}]
+        (binding [*config* (logic.migrations/make-config (->> (random-uuid)
+                                                              str
+                                                              (fs/join-path (System/getProperty "java.io.tmpdir"))
+                                                              (fs/assert-dir!)))
+                  *runner* (runners.mysql/make-mysql-migration-runner db-spec)
+                  *db-spec* db-spec]
+          (try
+            (f)
+            (finally
+              (.stop mysql-container)
+              (fs/rm! (:migrations-dir *config*))))))
+      (catch IllegalStateException e
+        (println "Skipping MySQL integration tests because Docker is unavailable:" (.getMessage e))))))
 
 
 (deftest up-migration-test
