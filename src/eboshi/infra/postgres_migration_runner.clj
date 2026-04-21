@@ -11,7 +11,7 @@
   (with-open [con (jdbc/get-connection db-spec)]
     (jdbc/execute-one! con ["create table if not exists eboshi_migrations(
                               name varchar(150) not null primary key,
-                              created_at timestamp not null);"])
+                              created_at timestamptz not null);"])
     (mapv (fn [[f & args]]
             (-> f
                 (partial con)
